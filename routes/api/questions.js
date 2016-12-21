@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var seedQuestions = require('../../seeds/seedQuestions');
 
 router.get('/', function(req, res){
-  res.json({message: "Hello from your very own back end!"})
+  res.json({seedQuestions})
 });
 
 

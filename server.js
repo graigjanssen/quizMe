@@ -23,13 +23,16 @@ app.use(function(req, res, next) {
 
 // DATABASE //
 
-var dbPath = 'mongodb://localhost/quiz-me';
+var dbPath = 'mongodb://localhost/quizMe';
 mongoose.connect(process.env.MONGOLAB_URI || dbPath);
 
 // ROUTING / API //
 
 var indexRoute = require('./routes/index');
+var questionsRoute = require('./routes/api/questions');
 app.use('/', indexRoute);
+app.use('/api/questions', questionsRoute);
+
 
 var port = process.env.port || 3000;
 
