@@ -4,7 +4,7 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
   inject: 'body'
-})
+});
 
 module.exports = {
   // Transform the following code
@@ -13,7 +13,7 @@ module.exports = {
   ],
   // Resulting file from transformation
   output: {
-    path: __dirname + "/build",
+    path: __dirname + "/dist",
     filename: 'index_bundle.js'
   },
   // How to transform
@@ -24,6 +24,12 @@ module.exports = {
         test: /\.js$/,
         include: __dirname + '/app',
         loader: 'babel-loader'
+      },
+      // For SASS
+      {
+        test: /\.css$/,
+        include: __dirname + '/app',
+        loaders: ["style","css","sass"]
       }
     ]
   },
