@@ -8,7 +8,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 
 // Components
-var Main = require('./components/Main');
+var Main = require('./components/main/Main');
 var Home = require('./components/Home');
 
 var routes = (
