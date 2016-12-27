@@ -7,7 +7,7 @@ var Footer = require('./Footer');
 var Main = React.createClass({
   render: function () {
     return (
-      <div className="main">
+      <div className="container-fluid main">
         <Header/>
         {this.props.children}
         <Footer/>
