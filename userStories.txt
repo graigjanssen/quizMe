@@ -1,0 +1,44 @@
+USER STORIES
+- At all times
+  - Use top nav to set up quiz, add question, manage questions
+
+- On initial page load
+  - Read concise description of what's possible
+  - Decide between two main options - new quiz, add question
+
+- Set up a quiz
+  - Select 1 to 3 difficulty 'filters'
+    - Minimum of 1 difficulty must be selected
+  - See available categories, each with amount of available questions based on difficulty selection
+  - Select/deselect categories in left hand panel
+  - View selected categories in right hand panel
+  - Adjust number of questions in each category by typing or clicking arrow buttons.
+    - Maximum should not exceed available questions.
+    - Maximum should change dynamically as user changes difficulty filters
+    - Minimum should always be 1
+  - View total number of questions
+  - Click button to start quiz
+  IF no questions are available based on difficulty filters
+    - Show info message prompting user to add more questions
+    - Click button to add question
+
+- Take a quiz
+  - Read question text
+  - Select answer
+  - Submit answer
+   - Question and answers remain visible after submit
+   - Submit button changes behavior to Next Question
+      IF final question...
+        - Submit button changes behavior to Finish Quiz, go to results
+   IF correct, alert user
+     - Display small success message
+     - Highlight correct answer in green
+   IF incorrect, alert user, show correct answer
+     - Display failure message
+     - Highlight incorrect answer in red
+     - Highlight correct answer in green
+  - See current progress
+
+- View quiz results
+- Add question
+- Manage quiz questions
