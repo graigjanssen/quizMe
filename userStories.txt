@@ -4,7 +4,8 @@ USER STORIES
 
 - On initial page load
   - Read concise description of what's possible
-  - Decide between two main options - new quiz, add question
+  - Decide between two options - new quiz, add question
+  - Can also go to Manage Questions via header nav
 
 - Set up a quiz
   - Select 1 to 3 difficulty 'filters'
@@ -19,26 +20,60 @@ USER STORIES
   - View total number of questions
   - Click button to start quiz
   IF no questions are available based on difficulty filters
-    - Show info message prompting user to add more questions
+    - See info message prompting user to add more questions
     - Click button to add question
 
 - Take a quiz
+  IF multiple difficulties selected
+    - Number of questions should be as evenly distributed as possible and in random order
   - Read question text
+  - View difficulty rating
   - Select answer
+  - Change answer before submitting
   - Submit answer
-   - Question and answers remain visible after submit
-   - Submit button changes behavior to Next Question
+   - See result of answer before moving to next question
+   - Click Next button
       IF final question...
-        - Submit button changes behavior to Finish Quiz, go to results
-   IF correct, alert user
-     - Display small success message
-     - Highlight correct answer in green
-   IF incorrect, alert user, show correct answer
-     - Display failure message
-     - Highlight incorrect answer in red
-     - Highlight correct answer in green
+        - Click Finish button
+   IF correct
+     - See small success message
+     - See correct answer highlighted green
+   IF incorrect
+     - See failure message
+     - See incorrect answer highlighted red
+     - See correct answer highlighted green
   - See current progress
+  - IF user clicks nav links
+    - Confirm navigating away from quiz, inform progress will be lost
+    - Allow user to cancel navigating away from quiz
 
 - View quiz results
+  - View number of correct answers
+  - View percentage of correct answers
+  - Click button to set up new quiz
+
 - Add question
+  - Select category from existing or create new
+  - Input question text
+  - Choose either True/False or Multiple Choice answer sets
+    - Default: Multiple Choice
+      - Four blank input fields
+      - Click radio button to select correct answer
+    - True/False
+      - "True" and "False" are text instead of inputs
+      - Click radio button to select which is correct
+  - Select 1 difficulty
+  - Click Save button
+    - See error info if field left blank
+  - Success page
+    - See message that question was saved
+    - CTA: Add - add another question
+    - CTA: Done - return to start page
+
 - Manage quiz questions
+  - View all questions (no answers) as links
+  - Use dropdown menu to view questions by category
+  - Click question to go to edit question view
+    - Identical to Add Question view except...
+      - Click button to return to manage view
+  - Click Delete in list view
