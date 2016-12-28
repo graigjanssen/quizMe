@@ -7,9 +7,11 @@ var Footer = require('./Footer');
 var Main = React.createClass({
   render: function () {
     return (
-      <div className="container-fluid main">
+      <div className="global">
         <Header/>
-        {this.props.children}
+        <div className="main container-fluid">
+          {this.props.children}
+        </div>
         <Footer/>
       </div>
     )

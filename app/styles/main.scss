@@ -1,12 +1,21 @@
-@import 'header';
+@import './base/variables';
+@import './base/mixins';
 
-$primary-color: #32df56;
-$header-font-size: 7em;
+@import './modules/header';
+@import './modules/footer';
 
-.main {
-  position: relative;
-  color: blue;
+.global {
+
 }
-.home {
-  color: red;
+.main {
+  min-height: 500px;
+  background-color: $light-bg;
+  color: $dark-text;
+  position: relative;
+  font-size: 1.75em;
+  text-align: center;
+
+  .box {
+    padding: .5em;
+  }
 }
