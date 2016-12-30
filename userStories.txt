@@ -1,10 +1,10 @@
 USER STORIES
 - At all times
-  - Use top nav to set up quiz, add question, manage questions
+  X Use top nav to set up quiz, add question, manage questions
 
 - On initial page load
   - Read concise description of what's possible
-  - Decide between two options - new quiz, add question
+  X Decide between two options - new quiz, add question
   - Can also go to Manage Questions via header nav
 
 - Set up a quiz
