@@ -3,6 +3,7 @@
 
 @import './modules/header';
 @import './modules/footer';
+@import './modules/layout';
 
 .global {
 
@@ -15,7 +16,18 @@
   font-size: 1.75em;
   text-align: center;
 
-  .box {
-    padding: .5em;
+}
+.home {
+  #title {
+    font-size: 2.75em;
+    margin: .5em 0;
+  }
+  #subtitle {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  .btn {
+    font-size: 1.5em;
   }
 }
