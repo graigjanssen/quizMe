@@ -7,13 +7,13 @@ function Nav(props){
   return (
     <ul className="nav">
       <Link to="/setup">
-        <NavItem text="New"/>
+        <li className="nav-item">New</li>
       </Link>
       <Link to="/add">
-        <NavItem text="Add"/>
+        <li className="nav-item">Add</li>
       </Link>
       <Link to="/manage">
-        <NavItem text="Manage"/>
+        <li className="nav-item">Manage</li>
       </Link>
     </ul>
   )

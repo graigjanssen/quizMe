@@ -2,8 +2,15 @@
   display: inline-block;
   .nav-item {
     display: inline-block;
+    margin: 0 1em;
     font-size: .65em;
-    vertical-align: middle;
+    color: $bg-footer;
     text-decoration: none;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    transition: border-bottom .25s, color .25s;
+    &:hover {
+      border-bottom: 2px solid $text-light;
+      color: $text-light;
+    }
   }
 }

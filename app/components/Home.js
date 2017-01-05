@@ -18,12 +18,12 @@ var Home = React.createClass({
         <div className="row">
           <div className="col-xs-12 col-md-4 col-md-offset-2">
             <Link to="/setup">
-              <button type="button" className="btn btn-lg btn-primary space">New Quiz</button>
+              <button type="button" className="btn btn-primary space">New Quiz</button>
             </Link>
           </div>
           <div className="col-xs-12 col-md-4">
           <Link to="/add">
-            <button type="button" className="btn btn-lg btn-success space">Add Question</button>
+            <button type="button" className="btn btn-success space">Add Question</button>
           </Link>
           </div>
         </div>

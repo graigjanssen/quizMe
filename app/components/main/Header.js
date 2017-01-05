@@ -7,14 +7,8 @@ var Header = React.createClass({
     return (
       <div className="header">
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-xs-2">
-              <span className="header-title">QuizMe</span>
-            </div>
-            <div className="col-xs-8">
-              <Nav/>
-            </div>
-          </div>
+          <span id="header-title">QuizMe</span>
+          <Nav/>
         </div>
       </div>
     )
