@@ -4,7 +4,7 @@ var helpers = {
   getAll: function() {
     return axios.get('http://localhost:3000/api/questions/categories')
     .then(function(response){
-      return response.data;
+      return response.data.categoryTotals;
     });
   }
 }

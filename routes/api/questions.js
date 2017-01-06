@@ -3,6 +3,20 @@ var router = express.Router();
 var Question = require('../../models/question');
 var seedQuestions = require('../../seeds/seedQuestions');
 
+// Transform categoryMap object into array of objects, each with category name and difficulties
+function getCategoryTotals(questions){
+  var categoryMap = getCategoryMap(questions);
+  var categoryTotals = [];
+  for (category in categoryMap) {
+    var categoryObj = {
+      name: category,
+      difficulties: categoryMap[category]
+    }
+    categoryTotals.push(categoryObj)
+  }
+  return categoryTotals;
+}
+// Get object where keys = category names, values = objects with question totals by difficulty
 function getCategoryMap(questions){
   var categoryMap = {};
   questions.forEach(function(question){
@@ -22,7 +36,7 @@ function getCategoryMap(questions){
 
 router.get('/categories', function(req, res){
   Question.find({}, function(err, dbQuestions){
-    res.json({totalQuestionsByCategory: getCategoryMap(dbQuestions)});
+    res.json({categoryTotals: getCategoryTotals(dbQuestions)});
   });
 });
 

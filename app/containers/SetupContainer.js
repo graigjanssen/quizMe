@@ -13,7 +13,6 @@ var SetupContainer = React.createClass({
   },
   componentDidMount: function () {
     categoryHelpers.getAll().then(function(categories){
-      console.log(categories);
       this.setState({
         categories: categories
       })
@@ -21,7 +20,8 @@ var SetupContainer = React.createClass({
   },
   render: function () {
     return (
-      <Setup/>
+      <Setup
+      categories={this.state.categories}/>
     )
   }
 });
