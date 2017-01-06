@@ -5,7 +5,7 @@ USER STORIES
 - On initial page load
   - Read concise description of what's possible
   X Decide between two options - new quiz, add question
-  - Can also go to Manage Questions via header nav
+  X Can also go to Manage Questions via header nav
 
 - Set up a quiz
   - Select 1 to 3 difficulty 'filters'

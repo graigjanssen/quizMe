@@ -20,7 +20,7 @@ function getCategoryMap(questions){
   return categoryMap;
 }
 
-router.get('/', function(req, res){
+router.get('/categories', function(req, res){
   Question.find({}, function(err, dbQuestions){
     res.json({totalQuestionsByCategory: getCategoryMap(dbQuestions)});
   });

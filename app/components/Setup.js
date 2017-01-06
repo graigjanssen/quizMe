@@ -3,7 +3,21 @@ require('!style!css!sass!../styles/main.scss');
 
 function Setup(props){
   return (
-    <div>Setup</div>
+    <div className="setup">
+      <h1 className="section-heading">Create New Quiz</h1>
+      <div className="row">
+        <div className="col-xs-12 col-md-6">
+          <h2 className="section-subheading text-left">Difficulty</h2>
+          <h2 className="section-subheading text-left">Categories</h2>
+            <ul className="text-left">
+              <li>props.category</li>
+            </ul>
+        </div>
+        <div className="col-xs-12 col-md-6">
+          <h2 className="section-subheading">My Quiz</h2>
+        </div>
+      </div>
+    </div>
   )
 }
 
