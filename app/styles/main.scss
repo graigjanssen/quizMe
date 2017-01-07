@@ -11,8 +11,8 @@
 }
 .main {
   min-height: 520px;
-  background-color: $bg-light;
-  color: $text-dark;
+  background-color: $orange-lighter;
+  color: black;
   position: relative;
   font-size: 1.75em;
   text-align: center;
@@ -30,6 +30,7 @@
   #title {
     font-size: 2.75em;
     margin: .5em 0;
+    color: $blue-dark;
   }
   #subtitle {
     font-size: 1.25em;

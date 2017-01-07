@@ -6,15 +6,15 @@ var NavItem = require('../../modules/NavItem');
 function Nav(props){
   return (
     <ul className="nav">
-      <Link to="/setup">
-        <li className="nav-item">New</li>
-      </Link>
-      <Link to="/add">
-        <li className="nav-item">Add</li>
-      </Link>
-      <Link to="/manage">
-        <li className="nav-item">Manage</li>
-      </Link>
+      <li className="nav-item">
+        <Link to="/setup">New</Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/add">Add</Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/manage">Manage</Link>
+      </li>
     </ul>
   )
 }

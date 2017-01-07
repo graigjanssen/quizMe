@@ -4,13 +4,17 @@
     display: inline-block;
     margin: 0 1em;
     font-size: .65em;
-    color: $bg-footer;
-    text-decoration: none;
-    border-bottom: 2px solid rgba(0,0,0,0);
-    transition: border-bottom .25s, color .25s;
-    &:hover {
-      border-bottom: 2px solid $text-light;
-      color: $text-light;
+    a {
+      padding: .05em .7em;
+      border-radius: 4px;
+      background-color: rgba(0,0,0,0);
+      color: white;
+      transition: background-color .3s, color .3s;
+      &:hover {
+        background-color: $blue-dark;
+        color: $yellow-lighter;
+      }
     }
   }
+
 }
