@@ -3,7 +3,7 @@ require('!style!css!sass!../styles/main.scss');
 var Setup = React.createClass({
   render: function () {
     var categoryList = this.props.categories.map(function(category){
-      return <li>Name: {category.name}</li>
+      return <li>Name: {category.name} Easy: {category.difficulties.E}</li>
     })
     return (
       <div className="setup">

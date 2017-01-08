@@ -1,6 +1,6 @@
 .header {
-  min-height: 60px;
-  max-height: 60px;
+  min-height: 64px;
+  max-height: 64px;
   background-color: $blue;
   color: white;
   border-bottom: 3px solid $blue-darker;
@@ -11,6 +11,7 @@
     font-size: 2em;
   }
   #header-title {
+    vertical-align: middle;
     margin-right: 2em;
     @include phone {
       margin-right: 1em;
