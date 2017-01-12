@@ -1,7 +1,6 @@
 var React = require('react');
 require('!style!css!sass!../../styles/main.scss');
 var Link = require('react-router').Link;
-var NavItem = require('../../modules/NavItem');
 
 function Nav(props){
   return (

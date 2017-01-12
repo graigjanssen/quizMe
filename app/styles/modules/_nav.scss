@@ -14,7 +14,7 @@
       background-color: rgba(0,0,0,0);
       color: white;
       transition: background-color .3s, color .3s;
-      &:hover {
+      &:hover, &:visited {
         background-color: $blue-dark;
         color: $yellow-lighter;
       }

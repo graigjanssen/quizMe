@@ -13,16 +13,20 @@ var SetupContainer = React.createClass({
   },
   componentDidMount: function () {
     categoryHelpers.getAll().then(function(categories){
-      console.log(categories);
       this.setState({
         categories: categories
       })
     }.bind(this));
   },
+  categoryToggle: function(e){
+    e.target.classList.toggle("selected");
+    console.log(e.target.classList);
+  },
   render: function () {
     return (
       <Setup
-      categories={this.state.categories}/>
+      categories={this.state.categories}
+      handleClick={this.categoryToggle}/>
     )
   }
 });

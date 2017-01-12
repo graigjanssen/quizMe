@@ -1,9 +1,17 @@
 var React = require('react');
 require('!style!css!sass!../styles/main.scss');
+
+var Category = require('../modules/Category');
+
 var Setup = React.createClass({
   render: function () {
+    var handleClick = this.props.handleClick;
     var categoryList = this.props.categories.map(function(category){
-      return <li>Name: {category.name} Easy: {category.difficulties.E}</li>
+      var totalQuestions = category.difficulties.E + category.difficulties.M + category.difficulties.H;
+      return <Category
+      name={category.name}
+      totalQuestions={totalQuestions}
+      handleClick={handleClick}/>
     })
     return (
       <div className="setup">
@@ -12,9 +20,9 @@ var Setup = React.createClass({
           <div className="col-xs-12 col-md-6">
             <h2 className="section-subheading text-left">Difficulty</h2>
             <h2 className="section-subheading text-left">Categories</h2>
-              <ul className="text-left">
+              <div className="row">
                 {categoryList}
-              </ul>
+              </div>
           </div>
           <div className="col-xs-12 col-md-6">
             <h2 className="section-subheading">My Quiz</h2>

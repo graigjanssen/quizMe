@@ -1,0 +1,16 @@
+.category {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  transition: background-color .25s;
+  &:hover {
+    background-color: $blue-lighter;
+  }
+}
+.selected {
+  background-color: $blue-dark;
+  color: white;
+  &:hover {
+    background-color: $blue-dark;
+    color: white;
+  }
+}
