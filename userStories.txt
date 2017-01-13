@@ -77,3 +77,11 @@ USER STORIES
     - Identical to Add Question view except...
       - Click button to return to manage view
   - Click Delete in list view
+
+  *<><>* THINKSPACE *<><>*
+
+  Dynamic category filtering by difficulty
+
+    We want the CategoriesContainer component to selectively put together its CategoryList UI variable depending on the state of the DifficultiesContainer component.  DifficultiesContainer will have single piece of state, an array that could be ['E','M','H'], ['E'], ['M','H'], etc.  When everything first loads, CategoriesContainer doesn't need to care about difficulties, can just render everything.  The trick is that when we change difficulty selections, thereby changing DifficultyContainer's state, we want CategoriesContainer to 'listen' for that change, and upon hearing it, update the categories accordingly.
+
+    The game plan is for SetupContainer to keep track of two states from Difficulties and Categories.  Setup is the common ancestor of Difficulties and Categories, so we lift state up from Difficulties and Categories can render accordingly.

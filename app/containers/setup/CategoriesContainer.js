@@ -1,7 +1,7 @@
 var React = require('react');
-require('!style!css!sass!../styles/main.scss');
+require('!style!css!sass!../../styles/main.scss');
 
-var Categories = require('../components/Categories');
+var Categories = require('../../components/setup/Categories');
 
 var CategoriesContainer = React.createClass({
   categoryToggle: function(e){

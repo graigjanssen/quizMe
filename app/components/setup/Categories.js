@@ -1,7 +1,7 @@
 var React = require('react');
-require('!style!css!sass!../styles/main.scss');
+require('!style!css!sass!../../styles/main.scss');
 
-var Category = require('../modules/Category');
+var Category = require('../../modules/Category');
 
 function Categories(props) {
   var categoryList = props.categories.map(function(category){
