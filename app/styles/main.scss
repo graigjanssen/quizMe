@@ -16,12 +16,6 @@
   @include phone {
     font-size: 1.25em;
   }
-  .btn {
-    width: 80%;
-    @include phone {
-      width: 100%;
-    }
-  }
 }
 .home {
   #title {
