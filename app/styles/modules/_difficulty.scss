@@ -1,0 +1,22 @@
+.difficulty {
+  transition: background-color .25s;
+  background-color: rgba(0,0,0,0);
+}
+
+.easy {
+  &:hover {
+    background-color: $green;
+  }
+}
+
+.medium {
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
+.hard {
+  &:hover {
+    background-color: $red;
+  }
+}
