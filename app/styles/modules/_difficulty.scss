@@ -1,22 +1,39 @@
-.difficulty {
-  transition: background-color .25s;
-  background-color: rgba(0,0,0,0);
-}
-
-.easy {
-  &:hover {
-    background-color: $green;
+.difficulties {
+  .difficulty {
+    cursor: pointer;
+    background-color: $transparent;
+    border: 2px solid $transparent;
+    border-radius: 4px;
+    transition: background-color .25s, border .25s;
+    &:hover {
+      border: 2px solid $blue-darker;
+    }
+    &.selected {
+      color: #eee;
+    }
   }
-}
-
-.medium {
-  &:hover {
-    background-color: $yellow;
+  .easy {
+    &:hover {
+      background-color: $green;
+    }
+    &.selected {
+      background-color: darken($green, 5%);
+    }
   }
-}
-
-.hard {
-  &:hover {
-    background-color: $red;
+  .medium {
+    &:hover {
+      background-color: $yellow;
+    }
+    &.selected {
+      background-color: darken($yellow, 5%);
+    }
+  }
+  .hard {
+    &:hover {
+      background-color: $red;
+    }
+    &.selected {
+      background-color: darken($red, 5%);
+    }
   }
 }
