@@ -10,7 +10,7 @@ var hashHistory = ReactRouter.hashHistory;
 // Components / Containers
 var Main = require('./components/main/Main');
 var Home = require('./components/Home');
-var SetupContainer = require('./containers/setup/SetupContainer');
+var SetupContainer = require('./containers/SetupContainer');
 var AddContainer = require('./containers/AddContainer');
 var ManageContainer = require('./containers/ManageContainer');
 

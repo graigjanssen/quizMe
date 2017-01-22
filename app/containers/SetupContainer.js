@@ -1,9 +1,9 @@
 var React = require('react');
-require('!style!css!sass!../../styles/main.scss');
+require('!style!css!sass!../styles/main.scss');
 
-var categoryHelpers = require('../../helpers/categoryHelpers');
+var categoryHelpers = require('../helpers/categoryHelpers');
 
-var Setup = require('../../components/setup/Setup');
+var Setup = require('../components/setup/Setup');
 
 var SetupContainer = React.createClass({
   getInitialState: function () {
