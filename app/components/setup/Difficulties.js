@@ -8,9 +8,9 @@ function Difficulties(props) {
     <div className="difficulties">
       <h2 className="section-subheading text-left">Difficulty</h2>
       <div className="row">
-        <Difficulty name="Easy" css="easy" handleClick={props.handleClick}/>
-        <Difficulty name="Medium" css="medium" handleClick={props.handleClick}/>
-        <Difficulty name="Hard" css="hard" handleClick={props.handleClick}/>
+        <Difficulty name="Easy" css="easy" handleChange={props.handleChange}/>
+        <Difficulty name="Medium" css="medium" handleChange={props.handleChange}/>
+        <Difficulty name="Hard" css="hard" handleChange={props.handleChange}/>
       </div>
     </div>
   )

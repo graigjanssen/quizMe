@@ -1,9 +1,8 @@
 var React = require('react');
 require('!style!css!sass!../../styles/main.scss');
 
-var DifficultiesContainer = require('../../containers/setup/DifficultiesContainer');
-var CategoriesContainer = require('../../containers/setup/CategoriesContainer');
-var Category = require('../../modules/Category');
+var Difficulties = require('./Difficulties');
+var Categories = require('./Categories');
 
 var Setup = React.createClass({
   render: function () {
@@ -12,8 +11,11 @@ var Setup = React.createClass({
         <h1 className="section-heading">Create New Quiz</h1>
         <div className="row">
           <div className="col-xs-12 col-md-6">
-            <DifficultiesContainer />
-            <CategoriesContainer categories={this.props.categories}/>
+            <Difficulties
+            handleChange={this.props.handleDifficultiesChange}/>
+            <Categories
+            categories={this.props.categories}
+            handleChange={this.props.handleCategoriesChange}/>
           </div>
           <div className="col-xs-12 col-md-6">
             <h2 className="section-subheading">My Quiz</h2>

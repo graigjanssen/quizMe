@@ -9,7 +9,7 @@ function Categories(props) {
     return <Category
     name={category.name}
     totalQuestions={totalQuestions}
-    onClick={props.handleClick}/>
+    onClick={props.handleChange}/>
   })
   return (
     <div className="categories">

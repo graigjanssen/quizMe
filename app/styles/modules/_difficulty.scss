@@ -4,7 +4,7 @@
     background-color: $transparent;
     border: 2px solid $transparent;
     border-radius: 4px;
-    transition: background-color .25s, border .25s;
+    transition: background-color .25s, border .25s, color .25s;
     &:hover {
       border: 2px solid $blue-darker;
     }

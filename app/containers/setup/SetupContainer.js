@@ -18,10 +18,20 @@ var SetupContainer = React.createClass({
       })
     }.bind(this));
   },
+  handleDifficultiesChange: function(e){
+    console.log('Difficulty change detected');
+    e.target.classList.toggle("selected");
+  },
+  handleCategoriesChange: function(e){
+    console.log('Categories change detected');
+    e.target.classList.toggle("selected");
+  },
   render: function () {
     return (
       <Setup
-      categories={this.state.categories}/>
+      categories={this.state.categories}
+      handleDifficultiesChange={this.handleDifficultiesChange}
+      handleCategoriesChange={this.handleCategoriesChange}/>
     )
   }
 });
