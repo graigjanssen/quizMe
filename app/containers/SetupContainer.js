@@ -2,13 +2,19 @@ var React = require('react');
 require('!style!css!sass!../styles/main.scss');
 
 var categoryHelpers = require('../helpers/categoryHelpers');
+var utils = require('../helpers/utils');
 
 var Setup = require('../components/setup/Setup');
 
 var SetupContainer = React.createClass({
   getInitialState: function () {
     return {
-      categories: []
+      categories: [],
+      difficulties: {
+        easy: false,
+        medium: false,
+        hard: false
+      }
     }
   },
   componentDidMount: function () {
@@ -18,13 +24,21 @@ var SetupContainer = React.createClass({
       })
     }.bind(this));
   },
+  componentDidUpdate: function(){
+    console.log(this.state.difficulties);
+  },
   handleDifficultiesChange: function(e){
-    console.log('Difficulty change detected');
-    e.target.classList.toggle("selected");
+    utils.toggleSelected(e);
+    var selected = e.target.classList.contains('selected');
+    var difficulty = e.target.classList.item(1);
+    this.setState(function(prevState){
+      var prevDifficulties = prevState.difficulties;
+      prevDifficulties[difficulty] = selected ? true : false;
+      return {difficulties: prevDifficulties}
+    });
   },
   handleCategoriesChange: function(e){
-    console.log('Categories change detected');
-    e.target.classList.toggle("selected");
+    utils.toggleSelected(e);
   },
   render: function () {
     return (
