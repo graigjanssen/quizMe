@@ -34,6 +34,7 @@ var SetupContainer = React.createClass({
     this.setState(function(prevState){
       var prevDifficulties = prevState.difficulties;
       prevDifficulties[difficulty] = selected ? true : false;
+      console.log('categories: ', prevState.categories);
       return {difficulties: prevDifficulties}
     });
   },

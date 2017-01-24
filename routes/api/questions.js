@@ -27,7 +27,7 @@ function getCategoryMap(questions){
        categoryMap[category][difficulty]++;
     } else {
        // add category to categoryMap, set equal to difficulty map with E,M,or H equal to 1
-       categoryMap[category] = {"E":0,"M":0,"H":0};
+       categoryMap[category] = {"easy":0,"medium":0,"hard":0};
        categoryMap[category][difficulty]++;
     }
   });
@@ -41,9 +41,10 @@ router.get('/categories', function(req, res){
 });
 
 // Currently for experimental purposes only
-router.get('/science', function(req, res){
-  Question.find({category: "Science"}, function(err, dbQs){
-    res.json({howManyScienceQs: dbQs.length});
+router.get('/seed', function(req, res){
+  seedQuestions.forEach(function(question){
+    var newQ = new Question(question);
+    newQ.save();
   });
 });
 

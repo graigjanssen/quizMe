@@ -5,7 +5,7 @@ var Category = require('../../modules/Category');
 
 function Categories(props) {
   var categoryList = props.categories.map(function(category){
-    var totalQuestions = category.difficulties.E + category.difficulties.M + category.difficulties.H;
+    var totalQuestions = category.difficulties.easy + category.difficulties.medium + category.difficulties.hard;
     return <Category
     name={category.name}
     totalQuestions={totalQuestions}

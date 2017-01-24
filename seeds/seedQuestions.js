@@ -19,7 +19,7 @@ var seedQuestions = [
         correct : false
       }
     ],
-    difficulty : "M",
+    difficulty : "medium",
     category : "Geography"
   },
   {
@@ -35,14 +35,14 @@ var seedQuestions = [
       },
       {
         text : "Earth",
-        correct : true
+        correct : false
       },
       {
         text : "Mercury",
         correct : true
       }
     ],
-    difficulty : "M",
+    difficulty : "medium",
     category : "Science"
   },
   {
@@ -65,7 +65,7 @@ var seedQuestions = [
         correct : false
       }
     ],
-    difficulty : "H",
+    difficulty : "hard",
     category : "Rick and Morty"
   },
   {
@@ -88,7 +88,7 @@ var seedQuestions = [
         correct : false
       }
     ],
-    difficulty : "M",
+    difficulty : "medium",
     category : "Rick and Morty"
   },
   {
@@ -111,8 +111,100 @@ var seedQuestions = [
         correct : false
       }
     ],
-    difficulty : "E",
+    difficulty : "easy",
     category : "Geography"
+  },
+  {
+    text : "What year was the Declaration of Independence Signed?",
+    answers : [
+      {
+        text : "1947",
+        correct : false
+      },
+      {
+        text : "1848",
+        correct : false
+      },
+      {
+        text : "1776",
+        correct : true
+      },
+      {
+        text : "1781",
+        correct : false
+      }
+    ],
+    difficulty : "easy",
+    category : "History"
+  },
+  {
+    text : "Who was the 13th president of the United States?",
+    answers : [
+      {
+        text : "Franklin Pierce",
+        correct : false
+      },
+      {
+        text : "Millard Fillmore",
+        correct : true
+      },
+      {
+        text : "John Quincy Adams",
+        correct : false
+      },
+      {
+        text : "James K. Polk",
+        correct : false
+      }
+    ],
+    difficulty : "hard",
+    category : "History"
+  },
+  {
+    text : "What girl does Morty have a crush on?",
+    answers : [
+      {
+        text : "Summer",
+        correct : false
+      },
+      {
+        text : "Beth",
+        correct : true
+      },
+      {
+        text : "Jessica",
+        correct : true
+      },
+      {
+        text : "Bird Person",
+        correct : false
+      }
+    ],
+    difficulty : "easy",
+    category : "Rick and Morty"
+  },
+  {
+    text : "What Anatomy Park attraction is Rick most proud of?",
+    answers : [
+      {
+        text : "The Haunted Liver",
+        correct : false
+      },
+      {
+        text : "Stomach Fun Time",
+        correct : false
+      },
+      {
+        text : "Intestinal Roller Coaster",
+        correct : false
+      },
+      {
+        text : "Pirates of the Pancreas",
+        correct : true
+      }
+    ],
+    difficulty : "medium",
+    category : "Rick and Morty"
   }
 ]
 
