@@ -15,6 +15,7 @@ var Setup = React.createClass({
             handleChange={this.props.handleDifficultiesChange}/>
             <Categories
             categories={this.props.categories}
+            difficulties={this.props.difficulties}
             handleChange={this.props.handleCategoriesChange}/>
           </div>
           <div className="col-xs-12 col-md-6">

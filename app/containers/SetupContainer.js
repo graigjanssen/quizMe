@@ -24,9 +24,6 @@ var SetupContainer = React.createClass({
       })
     }.bind(this));
   },
-  componentDidUpdate: function(){
-    console.log(this.state.difficulties);
-  },
   handleDifficultiesChange: function(e){
     utils.toggleSelected(e);
     var selected = e.target.classList.contains('selected');
@@ -34,7 +31,6 @@ var SetupContainer = React.createClass({
     this.setState(function(prevState){
       var prevDifficulties = prevState.difficulties;
       prevDifficulties[difficulty] = selected ? true : false;
-      console.log('categories: ', prevState.categories);
       return {difficulties: prevDifficulties}
     });
   },
@@ -45,6 +41,7 @@ var SetupContainer = React.createClass({
     return (
       <Setup
       categories={this.state.categories}
+      difficulties={this.state.difficulties}
       handleDifficultiesChange={this.handleDifficultiesChange}
       handleCategoriesChange={this.handleCategoriesChange}/>
     )
