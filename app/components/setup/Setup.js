@@ -3,6 +3,7 @@ require('!style!css!sass!../../styles/main.scss');
 
 var Difficulties = require('./Difficulties');
 var Categories = require('./Categories');
+var ConfirmSetup = require('./ConfirmSetup');
 
 var Setup = React.createClass({
   render: function () {
@@ -19,7 +20,7 @@ var Setup = React.createClass({
             handleChange={this.props.handleCategoriesChange}/>
           </div>
           <div className="col-xs-12 col-md-6">
-            <h2 className="section-subheading">My Quiz</h2>
+            <ConfirmSetup/>
           </div>
         </div>
       </div>
