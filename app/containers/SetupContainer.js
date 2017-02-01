@@ -34,24 +34,24 @@ var SetupContainer = React.createClass({
       prevDifficulties[difficulty] = selected ? true : false;
       return {difficulties: prevDifficulties}
     });
+    this.updateSelected();
   },
   handleCategoriesChange: function(e){
     utils.toggleSelected(e);
     var el = e.target;
     var selected = el.classList.contains('selected');
-    // data-category-name attribute set using props.  getNamedItem method of NamedNodeMap
+    // data attributes set using props.  getNamedItem method of NamedNodeMap
     var name = el.attributes.getNamedItem("data-category-name").value;
     var questions = parseInt(el.attributes.getNamedItem("data-questions").value, 10);
 
     this.setState(function(prevState){
       var prevSelected = prevState.selected;
-      selected ? prevSelected[name] = questions : delete prevSelected[name];
+      selected ? prevSelected[name] = questions : delete prevSelected[name]; // Set or remove category from state based on 'selected' state
       return {selected: prevSelected};
-      //TO DO: figure out how to keep state.selected in sync with difficulties
     })
   },
-  componentDidUpdate: function(){
-    console.log(this.state.selected);
+  updateSelected: function(){
+    console.log('state ', this.state);
   },
   render: function () {
     return (
