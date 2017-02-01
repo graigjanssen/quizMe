@@ -14,7 +14,8 @@ var SetupContainer = React.createClass({
         easy: false,
         medium: false,
         hard: false
-      }
+      },
+      selected: {}
     }
   },
   componentDidMount: function () {
@@ -25,9 +26,9 @@ var SetupContainer = React.createClass({
     }.bind(this));
   },
   handleDifficultiesChange: function(e){
-    utils.toggleSelected(e);
+    utils.toggleSelected(e); // Toggle style
     var selected = e.target.classList.contains('selected');
-    var difficulty = e.target.classList.item(1);
+    var difficulty = e.target.classList.item(1); // Depends on class list being in certain order
     this.setState(function(prevState){
       var prevDifficulties = prevState.difficulties;
       prevDifficulties[difficulty] = selected ? true : false;
@@ -36,6 +37,21 @@ var SetupContainer = React.createClass({
   },
   handleCategoriesChange: function(e){
     utils.toggleSelected(e);
+    var el = e.target;
+    var selected = el.classList.contains('selected');
+    // data-category-name attribute set using props.  getNamedItem method of NamedNodeMap
+    var name = el.attributes.getNamedItem("data-category-name").value;
+    var questions = parseInt(el.attributes.getNamedItem("data-questions").value, 10);
+
+    this.setState(function(prevState){
+      var prevSelected = prevState.selected;
+      selected ? prevSelected[name] = questions : delete prevSelected[name];
+      return {selected: prevSelected};
+      //TO DO: figure out how to keep state.selected in sync with difficulties
+    })
+  },
+  componentDidUpdate: function(){
+    console.log(this.state.selected);
   },
   render: function () {
     return (
