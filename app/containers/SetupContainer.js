@@ -32,9 +32,27 @@ var SetupContainer = React.createClass({
     this.setState(function(prevState){
       var prevDifficulties = prevState.difficulties;
       prevDifficulties[difficulty] = selected ? true : false;
-      return {difficulties: prevDifficulties}
+
+      // To ensure selected state is properly updated
+      var categories = prevState.categories, selectedCats = prevState.selected;
+      categories.forEach(function(category){
+        if (category.name in selectedCats){
+          var selectedQuestions = 0;
+          for (difficulty in prevDifficulties){
+            if (prevDifficulties[difficulty]) {
+              selectedQuestions += category.difficulties[difficulty];
+            }
+          }
+          if (selectedQuestions > 0){
+            selectedCats[category.name] = selectedQuestions;
+          } else {
+            selectedQuestions = category.difficulties.easy + category.difficulties.medium + category.difficulties.hard;
+            selectedCats[category.name] = selectedQuestions;
+          }
+        }
+      })
+      return {difficulties: prevDifficulties, selected: selectedCats};
     });
-    this.updateSelected();
   },
   handleCategoriesChange: function(e){
     utils.toggleSelected(e);
@@ -50,8 +68,8 @@ var SetupContainer = React.createClass({
       return {selected: prevSelected};
     })
   },
-  updateSelected: function(){
-    console.log('state ', this.state);
+  componentDidUpdate: function(){
+    console.log(this.state.selected);
   },
   render: function () {
     return (
