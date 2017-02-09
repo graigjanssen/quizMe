@@ -2,6 +2,7 @@ var React = require('react');
 require('!style!css!sass!../styles/main.scss');
 
 var categoryHelpers = require('../helpers/categoryHelpers');
+var setupHelpers = require('../helpers/setupHelpers');
 var utils = require('../helpers/utils');
 
 var Setup = require('../components/setup/Setup');
@@ -30,27 +31,13 @@ var SetupContainer = React.createClass({
     var selected = e.target.classList.contains('selected');
     var difficulty = e.target.classList.item(1); // Depends on class list being in certain order
     this.setState(function(prevState){
+      // Update difficulties object
       var prevDifficulties = prevState.difficulties;
       prevDifficulties[difficulty] = selected ? true : false;
 
-      // To ensure selected state is properly updated
+      // Update selected state with correct question totals
       var categories = prevState.categories, selectedCats = prevState.selected;
-      categories.forEach(function(category){
-        if (category.name in selectedCats){
-          var selectedQuestions = 0;
-          for (difficulty in prevDifficulties){
-            if (prevDifficulties[difficulty]) {
-              selectedQuestions += category.difficulties[difficulty];
-            }
-          }
-          if (selectedQuestions > 0){
-            selectedCats[category.name] = selectedQuestions;
-          } else {
-            selectedQuestions = category.difficulties.easy + category.difficulties.medium + category.difficulties.hard;
-            selectedCats[category.name] = selectedQuestions;
-          }
-        }
-      })
+      var nextSelected = setupHelpers.syncQuestionTotals(categories, selectedCats, prevDifficulties);
       return {difficulties: prevDifficulties, selected: selectedCats};
     });
   },
