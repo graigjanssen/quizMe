@@ -20,7 +20,7 @@ var Setup = React.createClass({
             handleChange={this.props.handleCategoriesChange}/>
           </div>
           <div className="col-xs-12 col-md-6">
-            <ConfirmSetup/>
+            <ConfirmSetup selected={this.props.selected}/>
           </div>
         </div>
       </div>

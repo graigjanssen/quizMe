@@ -63,6 +63,7 @@ var SetupContainer = React.createClass({
       <Setup
       categories={this.state.categories}
       difficulties={this.state.difficulties}
+      selected={this.state.selected}
       handleDifficultiesChange={this.handleDifficultiesChange}
       handleCategoriesChange={this.handleCategoriesChange}/>
     )
