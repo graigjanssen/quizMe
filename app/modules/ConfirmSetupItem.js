@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 require('!style!css!sass!../styles/main.scss');
 
 function ConfirmSetupItem(props){
@@ -8,6 +9,11 @@ function ConfirmSetupItem(props){
       <div className="col-xs-4">{props.questions}</div>
     </div>
   )
+}
+
+ConfirmSetupItem.propTypes = {
+  categoryName: PropTypes.string.isRequired,
+  questions: PropTypes.number.isRequired
 }
 
 module.exports = ConfirmSetupItem;

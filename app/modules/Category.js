@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 require('!style!css!sass!../styles/main.scss');
 
 function Category(props){
@@ -11,6 +12,12 @@ function Category(props){
       {props.name} ({props.totalQuestions})
     </div>
   )
+}
+
+Category.propTypes = {
+  name: PropTypes.string.isRequired,
+  totalQuestions: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 module.exports = Category;

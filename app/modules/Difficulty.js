@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 require('!style!css!sass!../styles/main.scss');
 
 function Difficulty(props){
@@ -9,6 +10,12 @@ function Difficulty(props){
       </div>
     </div>
   )
+}
+
+Difficulty.propTypes = {
+  name: PropTypes.string.isRequired,
+  css: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired
 }
 
 module.exports = Difficulty;

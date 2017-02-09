@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 require('!style!css!sass!../../styles/main.scss');
 
 var ConfirmSetupItem = require('../../modules/ConfirmSetupItem');
@@ -19,6 +20,10 @@ function ConfirmSetup(props){
       {selectedCategoriesList}
     </div>
   )
+}
+
+ConfirmSetup.propTypes = {
+  selected: propTypes.object.isRequired
 }
 
 module.exports = ConfirmSetup;

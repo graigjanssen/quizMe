@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 require('!style!css!sass!../../styles/main.scss');
 
 var Difficulties = require('./Difficulties');
@@ -6,6 +7,13 @@ var Categories = require('./Categories');
 var ConfirmSetup = require('./ConfirmSetup');
 
 var Setup = React.createClass({
+  propTypes: {
+    categories: PropTypes.array.isRequired,
+    difficulties: PropTypes.object.isRequired,
+    selected: PropTypes.object.isRequired,
+    handleDifficultiesChange: PropTypes.func.isRequired,
+    handleCategoriesChange: PropTypes.func.isRequired
+  },
   render: function () {
     return (
       <div className="setup">

@@ -1,9 +1,15 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 require('!style!css!sass!../../styles/main.scss');
 
 var Category = require('../../modules/Category');
 
 var Categories = React.createClass({
+  propTypes: {
+    categories: PropTypes.array.isRequired,
+    difficulties: PropTypes.object.isRequired,
+    handleChange: PropTypes.func.isRequired
+  },
   render: function() {
     var handleChange = this.props.handleChange;
     // Create array of selected difficulties, changes with parent state
