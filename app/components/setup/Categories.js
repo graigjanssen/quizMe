@@ -20,7 +20,7 @@ var Categories = React.createClass({
       }
     }
     // Create Category components with total questions available based on selected difficulties
-    var categoryList = this.props.categories.map(function(category){
+    var categoryList = this.props.categories.map(function(category, index){
       var totalQuestions = 0;
       if (activeDifficulties.length){
         activeDifficulties.forEach(function(dif){
@@ -31,6 +31,7 @@ var Categories = React.createClass({
       }
 
       return <Category
+      key={index}
       name={category.name}
       totalQuestions={totalQuestions}
       onClick={handleChange}/>

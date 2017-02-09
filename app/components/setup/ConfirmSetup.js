@@ -5,12 +5,14 @@ require('!style!css!sass!../../styles/main.scss');
 var ConfirmSetupItem = require('../../modules/ConfirmSetupItem');
 
 function ConfirmSetup(props){
-  var selectedCategoriesList = [];
+  var selectedCategoriesList = [], i = 0;
   for (category in props.selected) {
     var listItem = <ConfirmSetupItem
     categoryName={category}
-    questions={props.selected[category]} />
+    questions={props.selected[category]}
+    key={i}/>
     selectedCategoriesList.push(listItem);
+    i++;
   }
   return (
     <div className="confirm-setup">
@@ -23,7 +25,7 @@ function ConfirmSetup(props){
 }
 
 ConfirmSetup.propTypes = {
-  selected: propTypes.object.isRequired
+  selected: PropTypes.object.isRequired
 }
 
 module.exports = ConfirmSetup;
