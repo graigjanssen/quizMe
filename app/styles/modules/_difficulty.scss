@@ -2,11 +2,11 @@
   .difficulty {
     cursor: pointer;
     background-color: $transparent;
-    border: 2px solid $transparent;
+    border: 1px solid $transparent;
     border-radius: 4px;
     transition: background-color .25s, border .25s, color .25s;
     &:hover {
-      border: 2px solid $blue-darker;
+      border: 1px solid $blue-darker;
     }
     &.selected {
       color: #eee;

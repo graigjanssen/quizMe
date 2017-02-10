@@ -1,0 +1,18 @@
+.setup {
+  .fixed-height {
+    height: 420px;
+  }
+  .btn-container {
+    position: absolute;
+    bottom: 5%;
+  }
+  .confirm-setup {
+    height: 75%;
+    .categories {
+      border-top: 1px solid $blue-darker;
+      border-bottom: 1px solid $blue-darker;
+      height: 70%;
+      overflow: scroll;
+    }
+  }
+}

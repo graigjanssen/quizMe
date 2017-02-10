@@ -16,16 +16,26 @@ function ConfirmSetup(props){
   }
   return (
     <div className="confirm-setup">
-      <h2 className="section-subheading">My Quiz</h2>
-      <div className="col-xs-8"><h3>Category Name</h3></div>
-      <div className="col-xs-4"><h3>Questions</h3></div>
-      {selectedCategoriesList}
+      <div className="row">
+        <h2 className="col-xs-12 section-subheading">My Quiz</h2>
+      </div>
+      <div className="row">
+        <div className="col-xs-8 text-left"><h3>Category Name</h3></div>
+        <div className="col-xs-4"><h3>Questions</h3></div>
+      </div>
+      <div className="categories">
+        {selectedCategoriesList}
+      </div>
+      <div className="col-xs-12 btn-container">
+        <button className="btn btn-success" onClick={props.handleClick}>Start Quiz</button>
+      </div>
     </div>
   )
 }
 
 ConfirmSetup.propTypes = {
-  selected: PropTypes.object.isRequired
+  selected: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 module.exports = ConfirmSetup;
