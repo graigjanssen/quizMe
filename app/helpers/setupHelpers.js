@@ -8,14 +8,15 @@ var helpers = {
             selectedQuestions += category.difficulties[difficulty];
           }
         }
-        if (selectedQuestions > 0){
-          selectedCats[category.name] = selectedQuestions;
-        } else {
+        var noDiffSelected = Object.values(prevDifficulties).every(function(difficulty){
+          return difficulty === false;
+        })
+        if (noDiffSelected){
           for (difficulty in category.difficulties){
             selectedQuestions += category.difficulties[difficulty];
           }
-          selectedCats[category.name] = selectedQuestions;
         }
+        selectedCats[category.name] = selectedQuestions;
       }
     });
     return selectedCats;
