@@ -5,7 +5,7 @@ require('!style!css!sass!../styles/main.scss');
 function Difficulty(props){
   return (
     <div className="col-xs-4">
-      <div className={"difficulty " + props.css} onClick={props.handleChange}>
+      <div className={"difficulty " + props.css} onClick={props.onChange}>
         {props.name}
       </div>
     </div>
@@ -15,7 +15,7 @@ function Difficulty(props){
 Difficulty.propTypes = {
   name: PropTypes.string.isRequired,
   css: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired
 }
 
 module.exports = Difficulty;

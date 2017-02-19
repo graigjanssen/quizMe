@@ -11,6 +11,7 @@ var hashHistory = ReactRouter.hashHistory;
 var Main = require('./components/main/Main');
 var Home = require('./components/Home');
 var SetupContainer = require('./containers/SetupContainer');
+var QuizContainer = require('./containers/QuizContainer');
 var AddContainer = require('./containers/AddContainer');
 var ManageContainer = require('./containers/ManageContainer');
 
@@ -19,6 +20,7 @@ var routes = (
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
       <Route path="/setup" component={SetupContainer}/>
+      <Route path="/quiz" component={QuizContainer}/>
       <Route path="/add" component={AddContainer}/>
       <Route path="/manage" component={ManageContainer}/>
     </Route>

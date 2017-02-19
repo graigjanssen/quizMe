@@ -27,7 +27,7 @@ function ConfirmSetup(props){
         {selectedCategoriesList}
       </div>
       <div className="col-xs-12 btn-container">
-        <button className="btn btn-success" onClick={props.handleClick}>Start Quiz</button>
+        <button className="btn btn-lg btn-success" onClick={props.onStartQuiz}>Start Quiz</button>
       </div>
     </div>
   )
@@ -35,7 +35,7 @@ function ConfirmSetup(props){
 
 ConfirmSetup.propTypes = {
   selected: PropTypes.object.isRequired,
-  handleClick: PropTypes.func.isRequired
+  onStartQuiz: PropTypes.func.isRequired
 }
 
 module.exports = ConfirmSetup;

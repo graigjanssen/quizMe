@@ -8,6 +8,9 @@ var utils = require('../helpers/utils');
 var Setup = require('../components/setup/Setup');
 
 var SetupContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
     return {
       categories: [],
@@ -55,6 +58,15 @@ var SetupContainer = React.createClass({
       return {selected: prevSelected};
     })
   },
+  handleStartQuiz: function() {
+    this.context.router.push({
+      pathname: '/quiz',
+      state: {
+        selected: this.state.selected,
+        difficulties: this.state.difficulties
+      }
+    });
+  },
   componentDidUpdate: function(){
     console.log(this.state.selected);
   },
@@ -64,8 +76,9 @@ var SetupContainer = React.createClass({
       categories={this.state.categories}
       difficulties={this.state.difficulties}
       selected={this.state.selected}
-      handleDifficultiesChange={this.handleDifficultiesChange}
-      handleCategoriesChange={this.handleCategoriesChange}/>
+      onDifficultiesChange={this.handleDifficultiesChange}
+      onCategoriesChange={this.handleCategoriesChange}
+      onStartQuiz={this.handleStartQuiz}/>
     )
   }
 });

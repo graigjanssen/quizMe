@@ -11,8 +11,9 @@ var Setup = React.createClass({
     categories: PropTypes.array.isRequired,
     difficulties: PropTypes.object.isRequired,
     selected: PropTypes.object.isRequired,
-    handleDifficultiesChange: PropTypes.func.isRequired,
-    handleCategoriesChange: PropTypes.func.isRequired
+    onDifficultiesChange: PropTypes.func.isRequired,
+    onCategoriesChange: PropTypes.func.isRequired,
+    onStartQuiz: PropTypes.func.isRequired
   },
   render: function () {
     return (
@@ -21,14 +22,16 @@ var Setup = React.createClass({
         <div className="row">
           <div className="col-xs-12 col-md-6">
             <Difficulties
-            handleChange={this.props.handleDifficultiesChange}/>
+            onChange={this.props.onDifficultiesChange}/>
             <Categories
             categories={this.props.categories}
             difficulties={this.props.difficulties}
-            handleChange={this.props.handleCategoriesChange}/>
+            onChange={this.props.onCategoriesChange}/>
           </div>
           <div className="col-xs-12 col-md-6 fixed-height">
-            <ConfirmSetup selected={this.props.selected}/>
+            <ConfirmSetup
+            selected={this.props.selected}
+            onStartQuiz={this.props.onStartQuiz}/>
           </div>
         </div>
       </div>

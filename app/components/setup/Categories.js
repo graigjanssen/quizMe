@@ -8,10 +8,10 @@ var Categories = React.createClass({
   propTypes: {
     categories: PropTypes.array.isRequired,
     difficulties: PropTypes.object.isRequired,
-    handleChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired
   },
   render: function() {
-    var handleChange = this.props.handleChange;
+    var onChange = this.props.onChange;
     // Create array of selected difficulties, changes with parent state
     var activeDifficulties = [];
     for (dif in this.props.difficulties){
@@ -34,7 +34,7 @@ var Categories = React.createClass({
       key={index}
       name={category.name}
       totalQuestions={totalQuestions}
-      onClick={handleChange}/>
+      onClick={onChange}/>
     })
     return (
       <div className="categories">

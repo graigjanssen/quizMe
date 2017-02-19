@@ -9,16 +9,16 @@ function Difficulties(props) {
     <div className="difficulties">
       <h2 className="section-subheading text-left">Difficulty</h2>
       <div className="row">
-        <Difficulty name="Easy" css="easy" handleChange={props.handleChange}/>
-        <Difficulty name="Medium" css="medium" handleChange={props.handleChange}/>
-        <Difficulty name="Hard" css="hard" handleChange={props.handleChange}/>
+        <Difficulty name="Easy" css="easy" onChange={props.onChange}/>
+        <Difficulty name="Medium" css="medium" onChange={props.onChange}/>
+        <Difficulty name="Hard" css="hard" onChange={props.onChange}/>
       </div>
     </div>
   )
 };
 
 Difficulties.propTypes = {
-  handleChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired
 }
 
 
