@@ -40,11 +40,20 @@ router.get('/categories', function(req, res){
   });
 });
 
-// Currently for experimental purposes only
+
 router.get('/seed', function(req, res){
   seedQuestions.forEach(function(question){
     var newQ = new Question(question);
     newQ.save();
+  });
+});
+
+router.get('/', function(req, res){
+  var difficulties = JSON.parse(req.query.difficulties);
+  var selected = JSON.parse(req.query.selected);
+  res.json({
+    difficulties: difficulties,
+    selected: selected
   });
 });
 
