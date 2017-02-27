@@ -15,7 +15,6 @@ var QuizContainer = React.createClass({
       difficulties: this.props.location.state.difficulties,
       selected: this.props.location.state.selected
     };
-    console.log('params before axios: ', params);
     quizHelpers.getQuestions(params).then(function(data){
       console.log('getQs response: ', data);
     });

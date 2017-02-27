@@ -49,11 +49,13 @@ router.get('/seed', function(req, res){
 });
 
 router.get('/', function(req, res){
-  var difficulties = JSON.parse(req.query.difficulties);
   var selected = JSON.parse(req.query.selected);
-  res.json({
-    difficulties: difficulties,
-    selected: selected
+  var categories = Object.keys(selected);
+  var difficulties = req.query.difficulties;
+  Question.find({
+     category: {$in: categories},
+     difficulty: {$in: difficulties}}, function(err, dbQuestions){
+    res.json({dbQuestions: dbQuestions})
   });
 });
 

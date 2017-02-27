@@ -59,16 +59,23 @@ var SetupContainer = React.createClass({
     })
   },
   handleStartQuiz: function() {
+    var selectedDifficulties = [],
+        diffs = this.state.difficulties;
+    for (var diff in diffs){
+      if (diffs[diff] === true){
+        selectedDifficulties.push(diff);
+      }
+    }
+    if (selectedDifficulties.length === 0) {
+      selectedDifficulties = ['easy', 'medium', 'hard'];
+    }
     this.context.router.push({
       pathname: '/quiz',
       state: {
         selected: this.state.selected,
-        difficulties: this.state.difficulties
+        difficulties: selectedDifficulties
       }
     });
-  },
-  componentDidUpdate: function(){
-    console.log(this.state.selected);
   },
   render: function () {
     return (
