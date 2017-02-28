@@ -2,10 +2,17 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 require('!style!css!sass!../styles/main.scss');
 
+var Answer = require('../modules/Answer');
+
 function Quiz(props){
   var question = props.questions[props.currentQuestion];
-  var answers = question.answers.map(function(answer){
-    return <h5>{answer.text}</h5>
+  var answers = question.answers.map(function(answer, index){
+    return (
+      <Answer
+      key={index}
+      text={answer.text}
+      correct={answer.correct}/>
+    )
   })
   return (
     <div>
