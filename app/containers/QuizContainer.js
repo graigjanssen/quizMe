@@ -11,7 +11,7 @@ var QuizContainer = React.createClass({
       currentQuestion: 0,
       totalQuestions: 0,
       correct: 0,
-      quizInProgress: true
+      quizInProgress: false
     }
   },
   componentWillMount: function(){
@@ -22,17 +22,22 @@ var QuizContainer = React.createClass({
     quizHelpers.getQuestions(params).then(function(questions){
       this.setState({
         questions: questions,
-        totalQuestions: questions.length
+        totalQuestions: questions.length,
+        quizInProgress: true
       })
     }.bind(this));
   },
   render: function() {
-    if (this.state.totalQuestions){
+    if (this.state.quizInProgress){
       return (
-        <h3>{this.state.questions[0].text}</h3>
+        <Quiz
+        questions={this.state.questions}
+        currentQuestion={this.state.currentQuestion}
+        totalQuestions={this.state.totalQuestions}
+        correct={this.state.correct}/>
       )
     } else {
-      return <div>Loading...</div>
+      return <div>Loading Quiz...</div>
     }
   }
 });
