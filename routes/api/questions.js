@@ -55,7 +55,7 @@ router.get('/', function(req, res){
   Question.find({
      category: {$in: categories},
      difficulty: {$in: difficulties}}, function(err, dbQuestions){
-    res.json({dbQuestions: dbQuestions})
+    res.json(dbQuestions);
   });
 });
 
