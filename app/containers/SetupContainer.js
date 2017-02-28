@@ -19,7 +19,8 @@ var SetupContainer = React.createClass({
         medium: false,
         hard: false
       },
-      selected: {}
+      selected: {},
+      disableSubmit: true
     }
   },
   componentDidMount: function () {
@@ -55,7 +56,8 @@ var SetupContainer = React.createClass({
     this.setState(function(prevState){
       var prevSelected = prevState.selected;
       selected ? prevSelected[name] = questions : delete prevSelected[name]; // Set or remove category from state based on 'selected' state
-      return {selected: prevSelected};
+      var disableSubmit = Object.keys(prevSelected).length === 0 ? true : false;
+      return {selected: prevSelected, disableSubmit: disableSubmit};
     })
   },
   handleStartQuiz: function() {
@@ -85,7 +87,8 @@ var SetupContainer = React.createClass({
       selected={this.state.selected}
       onDifficultiesChange={this.handleDifficultiesChange}
       onCategoriesChange={this.handleCategoriesChange}
-      onStartQuiz={this.handleStartQuiz}/>
+      onStartQuiz={this.handleStartQuiz}
+      disableSubmit={this.state.disableSubmit}/>
     )
   }
 });

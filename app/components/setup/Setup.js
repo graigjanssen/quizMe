@@ -13,7 +13,8 @@ var Setup = React.createClass({
     selected: PropTypes.object.isRequired,
     onDifficultiesChange: PropTypes.func.isRequired,
     onCategoriesChange: PropTypes.func.isRequired,
-    onStartQuiz: PropTypes.func.isRequired
+    onStartQuiz: PropTypes.func.isRequired,
+    disableSubmit: PropTypes.bool.isRequired
   },
   render: function () {
     return (
@@ -31,7 +32,8 @@ var Setup = React.createClass({
           <div className="col-xs-12 col-md-6 fixed-height">
             <ConfirmSetup
             selected={this.props.selected}
-            onStartQuiz={this.props.onStartQuiz}/>
+            onStartQuiz={this.props.onStartQuiz}
+            disableSubmit={this.props.disableSubmit}/>
           </div>
         </div>
       </div>

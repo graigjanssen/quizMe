@@ -27,7 +27,10 @@ function ConfirmSetup(props){
         {selectedCategoriesList}
       </div>
       <div className="col-xs-12 btn-container">
-        <button className="btn btn-lg btn-success" onClick={props.onStartQuiz}>Start Quiz</button>
+        <button
+          className="btn btn-lg btn-success"
+          onClick={props.onStartQuiz}
+          disabled={props.disableSubmit}>Start Quiz</button>
       </div>
     </div>
   )
