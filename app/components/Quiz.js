@@ -2,9 +2,11 @@ var React = require('react');
 require('!style!css!sass!../styles/main.scss');
 
 function Quiz(props){
-  var question = props.questions[props.currentQuestion];
+  console.log('props questions: ', props.questions);
+  var question = props.questions[0];
+  console.log('first question: ', question);
   return (
-    <div>{question.text}</div>
+    <div>quiz child</div>
   )
 }
 

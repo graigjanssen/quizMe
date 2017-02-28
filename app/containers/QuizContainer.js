@@ -6,7 +6,6 @@ var Quiz = require('../components/Quiz');
 
 var QuizContainer = React.createClass({
   getInitialState: function(){
-    // TO DO: set up state to track quiz progress
     return {
       questions: [],
       currentQuestion: 0,
@@ -15,7 +14,7 @@ var QuizContainer = React.createClass({
       quizInProgress: true
     }
   },
-  componentDidMount: function(){
+  componentWillMount: function(){
     var params = {
       difficulties: this.props.location.state.difficulties,
       selected: this.props.location.state.selected
@@ -28,12 +27,13 @@ var QuizContainer = React.createClass({
     }.bind(this));
   },
   render: function() {
-    var question = this.state.questions[0];
-    console.log(question.answers);
-    // For some reason we can't access any properties!
-    return (
-      <div>ack</div>
-    )
+    if (this.state.totalQuestions){
+      return (
+        <h3>{this.state.questions[0].text}</h3>
+      )
+    } else {
+      return <div>Loading...</div>
+    }
   }
 });
 
