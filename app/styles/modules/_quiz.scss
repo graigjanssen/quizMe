@@ -1,0 +1,23 @@
+.quiz {
+  .quiz-bar {
+    margin-top: .5em;
+    padding-bottom: .5em;
+    border-bottom: 2px solid $blue-dark;
+  }
+  .question {
+    margin-bottom: 1em;
+    font-size: 1.25em;
+    color: $blue-dark;
+  }
+  .answers {
+    margin-left: 2em;
+  }
+  .answer {
+    background-color: lighten($blue-lightest, 4%);
+    border: 1px solid $blue-dark;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: .25em 1em;
+    margin-bottom: .75em;
+  }
+}

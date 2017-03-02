@@ -40,8 +40,14 @@ function Quiz(props){
       correct={props.correct}
       currentQuestion={props.currentQuestion}
       totalQuestions={props.totalQuestions}/>
-      <h3>{question.text}</h3>
-      {answers}
+      <div className="row">
+        <div className="col-xs-12 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 quiz-body text-left">
+          <h3 className="question">{question.text}</h3>
+          <div className="col-xs-10 col-md-8 answers">
+            {answers}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

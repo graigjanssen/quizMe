@@ -4,7 +4,7 @@ require('!style!css!sass!../styles/main.scss');
 
 function Answer(props){
   return (
-    <h5>{props.text}</h5>
+    <p className="answer">{props.text}</p>
   )
 }
 
