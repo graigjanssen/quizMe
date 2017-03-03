@@ -9,15 +9,16 @@
     font-size: 1.25em;
     color: $blue-dark;
   }
-  .answers {
-    margin-left: 2em;
-  }
   .answer {
     background-color: lighten($blue-lightest, 4%);
     border: 1px solid $blue-dark;
     border-radius: 8px;
     cursor: pointer;
+    list-style-type: none;
     padding: .25em 1em;
-    margin-bottom: .75em;
+    margin-bottom: .5em;
+  }
+  .btn-next {
+    width: 50%;
   }
 }

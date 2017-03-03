@@ -31,7 +31,8 @@ function Quiz(props){
       <Answer
       key={index}
       text={answer.text}
-      correct={answer.correct}/>
+      correct={answer.correct}
+      handleClick={props.handleAnswerClick}/>
     )
   })
   return (
@@ -41,10 +42,13 @@ function Quiz(props){
       currentQuestion={props.currentQuestion}
       totalQuestions={props.totalQuestions}/>
       <div className="row">
-        <div className="col-xs-12 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 quiz-body text-left">
+        <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 quiz-body text-left">
           <h3 className="question">{question.text}</h3>
-          <div className="col-xs-10 col-md-8 answers">
+          <ul className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
             {answers}
+          </ul>
+          <div className="btn-wrapper text-center">
+            <button className="btn btn-large btn-primary btn-next fa fa-arrow-circle-right" disabled={!props.answered}/>
           </div>
         </div>
       </div>

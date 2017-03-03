@@ -4,13 +4,18 @@ require('!style!css!sass!../styles/main.scss');
 
 function Answer(props){
   return (
-    <p className="answer">{props.text}</p>
+    <li className="answer text-center"
+    onClick={props.handleClick}
+    data-correct={props.correct}>
+      {props.text}
+    </li>
   )
 }
 
 Answer.propTypes = {
   text: PropTypes.string.isRequired,
-  correct: PropTypes.bool.isRequired
+  correct: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 module.exports = Answer;
