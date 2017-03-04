@@ -24,6 +24,18 @@ function QuizBar(props){
     </div>
   )
 }
+function QuizNavButton(props){
+  return (
+    <div className="btn-wrapper text-center">
+      <button className="btn btn-lg btn-primary btn-next"
+       disabled={!props.answered}
+       onClick={props.handleNextClick}>
+         {props.buttonText} <i className="fa fa-arrow-circle-right"></i>
+       </button>
+    </div>
+  )
+}
+
 function Quiz(props){
   var question = props.questions[props.currentQuestion];
   var answers = question.answers.map(function(answer, index){
@@ -34,7 +46,8 @@ function Quiz(props){
       correct={answer.correct}
       handleClick={props.handleAnswerClick}/>
     )
-  })
+  });
+  var buttonText = props.currentQuestion === props.totalQuestions - 1 ? 'Finish' : 'Next';
   return (
     <div className="quiz">
       <QuizBar
@@ -47,13 +60,10 @@ function Quiz(props){
           <ul className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
             {answers}
           </ul>
-          <div className="btn-wrapper text-center">
-            <button className="btn btn-large btn-primary btn-next"
-             disabled={!props.answered}
-             onClick={props.handleNextClick}>
-               Next <i className="fa fa-arrow-circle-right"></i>
-             </button>
-          </div>
+          <QuizNavButton
+          answered={props.answered}
+          handleNextClick={props.handleNextClick}
+          buttonText={buttonText}/>
         </div>
       </div>
     </div>

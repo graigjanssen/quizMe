@@ -6,6 +6,9 @@ var Quiz = require('../components/Quiz');
 var utils = require('../helpers/utils');
 
 var QuizContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function(){
     return {
       questions: [],
@@ -46,12 +49,22 @@ var QuizContainer = React.createClass({
   },
   handleNextClick: function(){
     utils.resetStyle("correct", "incorrect");
-    this.setState(function(pState){
-      return {
-        currentQuestion: pState.currentQuestion + 1,
-        answered: false
-      }
-    })
+    if (this.state.currentQuestion === this.state.totalQuestions - 1){
+      this.context.router.push({
+        pathname: "/results",
+        state: {
+          totalQuestions: this.state.totalQuestions,
+          totalCorrect: this.state.totalCorrect
+        }
+      })
+    } else {
+      this.setState(function(pState){
+        return {
+          currentQuestion: pState.currentQuestion + 1,
+          answered: false
+        }
+      });
+    }
   },
   render: function() {
     if (this.state.quizInProgress){
