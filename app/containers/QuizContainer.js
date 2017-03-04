@@ -3,6 +3,7 @@ require('!style!css!sass!../styles/main.scss');
 
 var quizHelpers = require('../helpers/quizHelpers');
 var Quiz = require('../components/Quiz');
+var utils = require('../helpers/utils');
 
 var QuizContainer = React.createClass({
   getInitialState: function(){
@@ -10,7 +11,7 @@ var QuizContainer = React.createClass({
       questions: [],
       currentQuestion: 0,
       totalQuestions: 0,
-      correct: 0,
+      totalCorrect: 0,
       quizInProgress: false,
       answered: false
     }
@@ -30,10 +31,17 @@ var QuizContainer = React.createClass({
   },
   handleAnswerClick: function(e) {
     if (!this.state.answered) {
-      console.log('correct?: ', e.target.attributes.getNamedItem("data-correct").value);
       this.setState({
         answered: true
       });
+      if (e.target.attributes.getNamedItem("data-correct").value === "true") {
+        utils.setStyle(e, "correct");
+        this.setState(function(prevState){
+          return {totalCorrect: prevState.totalCorrect + 1}
+        });
+      } else {
+        utils.setStyle(e, "incorrect");
+      }
     }
   },
   render: function() {
@@ -43,7 +51,7 @@ var QuizContainer = React.createClass({
         questions={this.state.questions}
         currentQuestion={this.state.currentQuestion}
         totalQuestions={this.state.totalQuestions}
-        correct={this.state.correct}
+        totalCorrect={this.state.totalCorrect}
         answered={this.state.answered}
         handleAnswerClick={this.handleAnswerClick}/>
       )

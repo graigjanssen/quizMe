@@ -15,7 +15,7 @@ function QuizBar(props){
           </Link>
         </div>
         <div className="col-xs-3 col-xs-offset-2 col-md-2 col-md-offset-4 text-left">
-          Correct: {props.correct}
+          Correct: {props.totalCorrect}
         </div>
         <div className="col-xs-4 col-md-3 text-left">
           Progress: {props.currentQuestion + 1}/{props.totalQuestions}
@@ -38,7 +38,7 @@ function Quiz(props){
   return (
     <div className="quiz">
       <QuizBar
-      correct={props.correct}
+      totalCorrect={props.totalCorrect}
       currentQuestion={props.currentQuestion}
       totalQuestions={props.totalQuestions}/>
       <div className="row">
@@ -60,7 +60,7 @@ Quiz.propTypes = {
   questions: PropTypes.array.isRequired,
   totalQuestions: PropTypes.number.isRequired,
   currentQuestion: PropTypes.number.isRequired,
-  correct: PropTypes.number.isRequired
+  totalCorrect: PropTypes.number.isRequired
 }
 
 

@@ -17,8 +17,17 @@
     list-style-type: none;
     padding: .25em 1em;
     margin-bottom: .5em;
+    transition: background-color .25s, color .25s;
   }
   .btn-next {
     width: 50%;
+  }
+  .correct {
+    background-color: $green;
+    color: white;
+  }
+  .incorrect {
+    background-color: $red;
+    color: white;
   }
 }
