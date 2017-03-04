@@ -48,7 +48,11 @@ function Quiz(props){
             {answers}
           </ul>
           <div className="btn-wrapper text-center">
-            <button className="btn btn-large btn-primary btn-next fa fa-arrow-circle-right" disabled={!props.answered}/>
+            <button className="btn btn-large btn-primary btn-next"
+             disabled={!props.answered}
+             onClick={props.handleNextClick}>
+               Next <i className="fa fa-arrow-circle-right"></i>
+             </button>
           </div>
         </div>
       </div>
@@ -60,7 +64,9 @@ Quiz.propTypes = {
   questions: PropTypes.array.isRequired,
   totalQuestions: PropTypes.number.isRequired,
   currentQuestion: PropTypes.number.isRequired,
-  totalCorrect: PropTypes.number.isRequired
+  totalCorrect: PropTypes.number.isRequired,
+  handleAnswerClick: PropTypes.func.isRequired,
+  handleNextClick: PropTypes.func.isRequired
 }
 
 

@@ -44,6 +44,15 @@ var QuizContainer = React.createClass({
       }
     }
   },
+  handleNextClick: function(){
+    utils.resetStyle("correct", "incorrect");
+    this.setState(function(pState){
+      return {
+        currentQuestion: pState.currentQuestion + 1,
+        answered: false
+      }
+    })
+  },
   render: function() {
     if (this.state.quizInProgress){
       return (
@@ -53,7 +62,8 @@ var QuizContainer = React.createClass({
         totalQuestions={this.state.totalQuestions}
         totalCorrect={this.state.totalCorrect}
         answered={this.state.answered}
-        handleAnswerClick={this.handleAnswerClick}/>
+        handleAnswerClick={this.handleAnswerClick}
+        handleNextClick={this.handleNextClick}/>
       )
     } else {
       return <div>Loading Quiz...</div>
