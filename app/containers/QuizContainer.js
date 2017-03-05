@@ -50,11 +50,11 @@ var QuizContainer = React.createClass({
   handleNextClick: function(){
     utils.resetStyle("correct", "incorrect");
     if (this.state.currentQuestion === this.state.totalQuestions - 1){
+      var score = Math.round((this.state.totalCorrect / this.state.totalQuestions) * 100);
       this.context.router.push({
         pathname: "/results",
         state: {
-          totalQuestions: this.state.totalQuestions,
-          totalCorrect: this.state.totalCorrect
+          score: score
         }
       })
     } else {
