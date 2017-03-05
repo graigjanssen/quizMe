@@ -5,6 +5,9 @@
     margin: 0 .5em;
     font-size: .65em;
     vertical-align: middle;
+    @include tablet {
+      margin: 0;
+    }
     @include phone {
       margin: 0;
     }
@@ -17,6 +20,9 @@
       &:hover, &:visited {
         background-color: $blue-dark;
         color: $yellow-lighter;
+      }
+      @include tablet {
+        padding: 0 .7em;
       }
       @include phone {
         padding: 0 .4em;

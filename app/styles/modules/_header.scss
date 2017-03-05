@@ -13,6 +13,9 @@
   #header-title {
     vertical-align: middle;
     margin-right: 2em;
+    @include tablet {
+      margin-right: 1em;
+    }
     @include phone {
       margin-right: 1em;
     }
