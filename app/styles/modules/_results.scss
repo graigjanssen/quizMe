@@ -1,0 +1,27 @@
+.results {
+  .heading {
+    margin-bottom: 1em;
+  }
+  .score {
+    border: 1px solid $blue-darker;
+    border-radius: 8px;
+    background-color: lighten($orange-lighter, 3%);
+    padding: .25em;
+    font-size: 2.5em;
+  }
+  .message {
+    margin-bottom: 2em;
+  }
+  .bad {
+    color: $red;
+  }
+  .okay {
+    color: $yellow;
+  }
+  .good {
+    color: $green;
+  }
+  button {
+    width: 100%;
+  }
+}
