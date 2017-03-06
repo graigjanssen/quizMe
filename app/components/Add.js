@@ -1,7 +1,18 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 require('!style!css!sass!../styles/main.scss');
+var Difficulty = require('../modules/Difficulty');
 
+function DifficultySelect(props){
+  return (
+    <div className="col-xs-12 col-sm-6 difficulties">
+      <h2 className="subheading">Difficulty</h2>
+      <Difficulty name="Easy" css="easy" onChange={props.handleDifficultySelect}/>
+      <Difficulty name="Medium" css="medium" onChange={props.handleDifficultySelect}/>
+      <Difficulty name="Hard" css="hard" onChange={props.handleDifficultySelect}/>
+    </div>
+  )
+}
 function Add(props){
   return (
     <div className="add">
@@ -18,14 +29,8 @@ function Add(props){
             <option value="Category 5">Category 5</option>
           </select>
         </div>
-        <div className="col-xs-12 col-sm-6">
-          <h2 className="subheading">Difficulty</h2>
-          <form>
-            <input className="add-radio" type="radio" name="difficulty" value="easy"/><span className="diff-label">Easy</span>
-            <input className="add-radio" type="radio" name="difficulty" value="medium"/><span className="diff-label">Medium</span>
-            <input className="add-radio" type="radio" name="difficulty" value="hard"/><span className="diff-label">Hard</span>
-          </form>
-        </div>
+        <DifficultySelect
+        handleDifficultySelect={props.handleDifficultySelect}/>
       </div>
       <div className="row">
         <div className="col-xs-12">
