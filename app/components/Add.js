@@ -4,12 +4,13 @@ require('!style!css!sass!../styles/main.scss');
 var Difficulty = require('../modules/Difficulty');
 
 function DifficultySelect(props){
+  var difficultyComponents = ['easy', 'medium', 'hard'].map(function(difficulty){
+    return <Difficulty level={difficulty} onChange={props.handleDifficultySelect}/>
+  })
   return (
     <div className="col-xs-12 col-sm-6 difficulties">
       <h2 className="subheading">Difficulty</h2>
-      <Difficulty name="Easy" css="easy" onChange={props.handleDifficultySelect}/>
-      <Difficulty name="Medium" css="medium" onChange={props.handleDifficultySelect}/>
-      <Difficulty name="Hard" css="hard" onChange={props.handleDifficultySelect}/>
+      {difficultyComponents}
     </div>
   )
 }

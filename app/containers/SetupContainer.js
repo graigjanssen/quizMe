@@ -33,7 +33,7 @@ var SetupContainer = React.createClass({
   handleDifficultiesChange: function(e){
     utils.toggleSelected(e); // Toggle style
     var selected = e.target.classList.contains('selected');
-    var difficulty = e.target.classList.item(1); // Depends on class list being in certain order
+    var difficulty = e.target.attributes.getNamedItem('data-level').value;
     this.setState(function(prevState){
       // Update difficulties object
       var prevDifficulties = prevState.difficulties;

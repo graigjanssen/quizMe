@@ -20,8 +20,7 @@ var AddContainer = React.createClass({
     }
   },
   handleDifficultySelect: function (e) {
-    console.log('handle difficulty select you clod!');
-    utils.toggleSelected(e);
+    
   },
   handleSubmit: function () {
     console.log('handle submit damnit!');
