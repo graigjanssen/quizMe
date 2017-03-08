@@ -4,11 +4,11 @@ require('!style!css!sass!../styles/main.scss');
 
 function Difficulty(props){
   // Capitalize level name
-  var levelName = props.level[0].toUpperCase() + props.level.substring(1);
+  // var levelName = props.level[0].toUpperCase() + props.level.substring(1);
   return (
     <div className="col-xs-4">
       <div className={"difficulty " + props.level} data-level={props.level} onClick={props.onChange}>
-        {levelName}
+        {props.level}
       </div>
     </div>
   )

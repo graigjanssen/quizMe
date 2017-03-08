@@ -6,7 +6,7 @@ var Difficulty = require('../modules/Difficulty');
 function DifficultySelect(props){
   var difficultyComponents = ['easy', 'medium', 'hard'].map(function(difficulty){
     return <Difficulty level={difficulty} onChange={props.handleDifficultySelect}/>
-  })
+  });
   return (
     <div className="col-xs-12 col-sm-6 difficulties">
       <h2 className="subheading">Difficulty</h2>

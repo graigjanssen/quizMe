@@ -20,10 +20,23 @@ var AddContainer = React.createClass({
     }
   },
   handleDifficultySelect: function (e) {
-    
+    // Visually deselect previously selected if present
+    utils.removeSelected('difficulty');
+    // Visually select difficulty
+    utils.toggleSelected(e);
+    // Update state with data-level attribute
+    var selectedDifficulty = e.target.attributes.getNamedItem("data-level").value;
+    this.setState(function(pState){
+      pQuestionData = pState.questionData;
+      pQuestionData.difficulty = selectedDifficulty;
+      return {questionData: pQuestionData};
+    });
   },
   handleSubmit: function () {
     console.log('handle submit damnit!');
+  },
+  componentDidUpdate: function(){
+    console.log('state: ', this.state);
   },
   render: function () {
     return (
