@@ -19,6 +19,14 @@ var AddContainer = React.createClass({
       }
     }
   },
+  handleCategoryInput: function(e) {
+    var category = e.target.value;
+    this.setState(function(pState){
+      var pQuestionData = pState.questionData;
+      pQuestionData.category = category;
+      return {questionData: pQuestionData};
+    });
+  },
   handleDifficultySelect: function (e) {
     // Visually deselect previously selected if present
     utils.removeSelected('difficulty');
@@ -42,6 +50,7 @@ var AddContainer = React.createClass({
     return (
       <Add
       canSubmit={this.state.canSubmit}
+      handleCategoryInput={this.handleCategoryInput}
       handleDifficultySelect={this.handleDifficultySelect}
       handleSubmit={this.handleSubmit}/>
     )

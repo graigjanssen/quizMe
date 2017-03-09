@@ -21,14 +21,8 @@ function Add(props){
       <div className="row">
         <div className="col-xs-12 col-sm-6">
           <h2 className="subheading">Category</h2>
-          <select>
-            <option value="create new">Create New</option>
-            <option value="Category 1">Category 1</option>
-            <option value="Category 2">Category 2</option>
-            <option value="Category 3">Category 3</option>
-            <option value="Category 4">Category 4</option>
-            <option value="Category 5">Category 5</option>
-          </select>
+          <input type="text"
+          onChange={props.handleCategoryInput}/>
         </div>
         <DifficultySelect
         handleDifficultySelect={props.handleDifficultySelect}/>
