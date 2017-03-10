@@ -4,6 +4,13 @@ require('!style!css!sass!../styles/main.scss');
 var Add = require('../components/Add');
 var utils = require('../helpers/utils');
 
+// Helper function to update properties of state.questionData without disturbing rest of it. Second argument will be object like {key: 'category', value: 'Geography'}
+function updateQuestionData(prevState, props){
+  pQuestionData = prevState.questionData;
+  pQuestionData[props.key] = props.value;
+  return {questionData: pQuestionData};
+};
+
 var AddContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -20,11 +27,9 @@ var AddContainer = React.createClass({
     }
   },
   handleCategoryInput: function(e) {
-    var category = e.target.value;
+    var nextProps = {key: 'category', value: e.target.value};
     this.setState(function(pState){
-      var pQuestionData = pState.questionData;
-      pQuestionData.category = category;
-      return {questionData: pQuestionData};
+      updateQuestionData(pState, nextProps)
     });
   },
   handleDifficultySelect: function (e) {
@@ -33,11 +38,18 @@ var AddContainer = React.createClass({
     // Visually select difficulty
     utils.toggleSelected(e);
     // Update state with data-level attribute
-    var selectedDifficulty = e.target.attributes.getNamedItem("data-level").value;
+    var nextProps = {
+      key: 'difficulty',
+      value: e.target.attributes.getNamedItem("data-level").value
+    };
     this.setState(function(pState){
-      pQuestionData = pState.questionData;
-      pQuestionData.difficulty = selectedDifficulty;
-      return {questionData: pQuestionData};
+      updateQuestionData(pState, nextProps);
+    });
+  },
+  handleQuestionInput: function (e) {
+    var nextProps = {key: 'text', value: e.target.value};
+    this.setState(function(pState){
+      updateQuestionData(pState, nextProps)
     });
   },
   handleSubmit: function () {
@@ -52,6 +64,7 @@ var AddContainer = React.createClass({
       canSubmit={this.state.canSubmit}
       handleCategoryInput={this.handleCategoryInput}
       handleDifficultySelect={this.handleDifficultySelect}
+      handleQuestionInput={this.handleQuestionInput}
       handleSubmit={this.handleSubmit}/>
     )
   }

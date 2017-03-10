@@ -34,7 +34,7 @@ function Add(props){
       </div>
       <div className="row space">
         <div className="col-xs-12">
-          <textarea rows="3" cols="36"></textarea>
+          <textarea rows="3" cols="36" onChange={props.handleQuestionInput}></textarea>
         </div>
       </div>
       <div className="row space">
