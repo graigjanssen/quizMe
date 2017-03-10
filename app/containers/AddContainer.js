@@ -22,7 +22,28 @@ var AddContainer = React.createClass({
         text: '',
         difficulty: '',
         category: '',
-        answers: []
+        answers: [
+          {
+            slot: 1,
+            text: '',
+            correct: false
+          },
+          {
+            slot: 2,
+            text: '',
+            correct: false
+          },
+          {
+            slot: 3,
+            text: '',
+            correct: false
+          },
+          {
+            slot: 4,
+            text: '',
+            correct: false
+          }
+        ]
       }
     }
   },
@@ -52,6 +73,12 @@ var AddContainer = React.createClass({
       updateQuestionData(pState, nextProps)
     });
   },
+  handleAnswerSelect: function (e) {
+    console.log('handle answer select!');
+  },
+  handleAnswerInput: function (e) {
+    console.log('handle answer input!');
+  },
   handleSubmit: function () {
     console.log('handle submit damnit!');
   },
@@ -65,6 +92,8 @@ var AddContainer = React.createClass({
       handleCategoryInput={this.handleCategoryInput}
       handleDifficultySelect={this.handleDifficultySelect}
       handleQuestionInput={this.handleQuestionInput}
+      handleAnswerSelect={this.handleAnswerSelect}
+      handleAnswerInput={this.handleAnswerInput}
       handleSubmit={this.handleSubmit}/>
     )
   }

@@ -3,6 +3,7 @@ var PropTypes = React.PropTypes;
 require('!style!css!sass!../styles/main.scss');
 var Difficulty = require('../modules/Difficulty');
 
+// Creates 3 Difficulty components, returns array of components, behave like radio button
 function DifficultySelect(props){
   var difficultyComponents = ['easy', 'medium', 'hard'].map(function(difficulty){
     return <Difficulty level={difficulty} onChange={props.handleDifficultySelect}/>
@@ -14,7 +15,34 @@ function DifficultySelect(props){
     </div>
   )
 }
+// Creates answer field with "radio button"
+function AnswerInput(props){
+  return (
+    <div className="answer-input-wrapper col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+      <span className="answer-input-select" data-slot={props.slot} onClick={props.handleAnswerSelect}>
+        <i className="fa fa-circle-o"></i>
+      </span>
+      <input
+      className="answer-input"
+      type="text"
+      data-slot={props.slot}
+      onChange={props.handleAnswerInput}/>
+    </div>
+  )
+}
+
 function Add(props){
+  // Create 4 answer fields, each with slot number
+  var answerInputs = [];
+  for (var i=0; i < 4; i++){
+    answerInputs.push(
+      <AnswerInput
+      key={i}
+      slot={i + 1}
+      handleAnswerSelect={props.handleAnswerSelect}
+      handleAnswerInput={props.handleAnswerInput}/>
+    );
+  };
   return (
     <div className="add">
       <h1 className="section-heading">Add New Question</h1>
@@ -38,17 +66,10 @@ function Add(props){
         </div>
       </div>
       <div className="row space">
-        <div className="col-xs-12">
+        <div className="col-xs-12 col-sm-6 col-sm-offset-3">
           <h2>Answers</h2>
           <h4><em>Provide at least 2 answers and select the correct one</em></h4>
-          <input className="add-radio" type="radio" name="correct"/>
-          <input className="answer-input" type="text"/><br/>
-          <input className="add-radio" type="radio" name="correct"/>
-          <input className="answer-input" type="text"/><br/>
-          <input className="add-radio" type="radio" name="correct"/>
-          <input className="answer-input" type="text"/><br/>
-          <input className="add-radio" type="radio" name="correct"/>
-          <input className="answer-input" type="text"/><br/>
+          {answerInputs}
         </div>
       </div>
       <div className="row space">

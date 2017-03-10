@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var AnswerSchema = mongoose.Schema({
   text: {type: String, required: true},
-  correct: Boolean
+  correct: {type: Boolean, required: true}
 });
 
 var QuestionSchema = mongoose.Schema({
