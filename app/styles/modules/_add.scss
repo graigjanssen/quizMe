@@ -5,11 +5,23 @@
   .add-radio {
     margin-right: .5em;
   }
-  .answer-input-select {
-    cursor: pointer;
-    margin-right: .25em;
-  }
-  .answer-input {
-    margin-bottom: .35em;
+  .answer-inputs {
+    .answer-input-wrapper {
+      padding: .35em 0;
+      background-color: $transparent;
+      transition: background-color .25s;
+    }
+    .selected {
+      background-color: darken($green, 5%);
+    }
+    .answer-input-select {
+      cursor: pointer;
+      margin-right: .25em;
+      color: black;
+      transition: color .1s;
+    }
+    .fa-check-circle-o {
+      color: lighten($green, 75%);
+    }
   }
 }

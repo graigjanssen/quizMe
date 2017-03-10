@@ -70,6 +70,19 @@ var AddContainer = React.createClass({
     });
   },
   handleAnswerSelect: function (e) {
+    // Update icon styles
+    var icons = document.getElementsByClassName("answer-input-select");
+    for (var i=0; i < icons.length; i++){
+      icons[i].classList.remove('fa-check-circle-o');
+      icons[i].classList.add('fa-circle-o');
+      // Reset wrapper selected styles
+      icons[i].parentElement.classList.remove('selected');
+    }
+    e.target.classList.remove('fa-circle-o');
+    e.target.classList.add('fa-check-circle-o');
+    // Update wrapper style
+    e.target.parentElement.classList.toggle('selected');
+    // Update state
     var slot = e.target.attributes.getNamedItem('data-slot').value;
     this.setState(function(pState){
       var pQuestionData = pState.questionData;

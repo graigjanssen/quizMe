@@ -67,7 +67,7 @@ function Add(props){
         </div>
       </div>
       <div className="row space">
-        <div className="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div className="answer-inputs col-xs-12 col-sm-6 col-sm-offset-3">
           <h2>Answers</h2>
           <h4><em>Provide at least 2 answers and select the correct one</em></h4>
           {answerInputs}
