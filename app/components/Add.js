@@ -19,9 +19,10 @@ function DifficultySelect(props){
 function AnswerInput(props){
   return (
     <div className="answer-input-wrapper col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-      <span className="answer-input-select" data-slot={props.slot} onClick={props.handleAnswerSelect}>
-        <i className="fa fa-circle-o"></i>
-      </span>
+      <span
+      className="answer-input-select fa fa-circle-o"
+      data-slot={props.slot}
+      onClick={props.handleAnswerSelect}></span>
       <input
       className="answer-input"
       type="text"
@@ -38,7 +39,7 @@ function Add(props){
     answerInputs.push(
       <AnswerInput
       key={i}
-      slot={i + 1}
+      slot={i}
       handleAnswerSelect={props.handleAnswerSelect}
       handleAnswerInput={props.handleAnswerInput}/>
     );

@@ -24,22 +24,18 @@ var AddContainer = React.createClass({
         category: '',
         answers: [
           {
-            slot: 1,
             text: '',
             correct: false
           },
           {
-            slot: 2,
             text: '',
             correct: false
           },
           {
-            slot: 3,
             text: '',
             correct: false
           },
           {
-            slot: 4,
             text: '',
             correct: false
           }
@@ -74,10 +70,29 @@ var AddContainer = React.createClass({
     });
   },
   handleAnswerSelect: function (e) {
-    console.log('handle answer select!');
+    var slot = e.target.attributes.getNamedItem('data-slot').value;
+    this.setState(function(pState){
+      var pQuestionData = pState.questionData;
+      // Set previously selected to false
+      pQuestionData.answers.forEach(function(answer){
+        if (answer.correct === true){
+          answer.correct = false;
+        }
+      });
+      // Set selected answer's correct prop to true
+      pQuestionData.answers[slot].correct = true;
+      return {questionData: pQuestionData};
+    });
   },
   handleAnswerInput: function (e) {
-    console.log('handle answer input!');
+    var answerText = e.target.value,
+        slot = e.target.attributes.getNamedItem('data-slot').value;
+    this.setState(function(pState){
+      var pQuestionData = pState.questionData;
+      pQuestionData.answers[slot].text = answerText;
+      return {questionData: pQuestionData};
+    })
+
   },
   handleSubmit: function () {
     console.log('handle submit damnit!');
