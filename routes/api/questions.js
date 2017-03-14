@@ -59,4 +59,11 @@ router.get('/', function(req, res){
   });
 });
 
+router.post('/', function(req, res){
+  var newQuestion = new Question(req.body);
+  newQuestion.save(function(err, dbQ){
+    res.json(dbQ);
+  });
+});
+
 module.exports = router;

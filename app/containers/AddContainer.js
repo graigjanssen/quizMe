@@ -2,6 +2,7 @@ var React = require('react');
 require('!style!css!sass!../styles/main.scss');
 
 var Add = require('../components/Add');
+var quizHelpers = require('../helpers/quizHelpers');
 var utils = require('../helpers/utils');
 
 // Helper function to update properties of state.questionData without disturbing rest of it. Second argument will be object like {key: 'category', value: 'Geography'}
@@ -139,7 +140,10 @@ var AddContainer = React.createClass({
 
   },
   handleSubmit: function () {
-    console.log('handle submit damnit!');
+    quizHelpers.addQuestion(this.state.questionData)
+    .then(function(response){
+      console.log(response);
+    })
   },
   componentDidUpdate: function(){
     console.log('state: ', this.state);

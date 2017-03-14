@@ -75,7 +75,12 @@ function Add(props){
       </div>
       <div className="row space">
         <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-          <button className="btn btn-lg btn-success space" disabled={!props.canSubmit}>Add <i className="fa fa-plus"></i></button>
+          <button
+          className="btn btn-lg btn-success space"
+          onClick={props.handleSubmit}
+          disabled={!props.canSubmit}>
+            Add <i className="fa fa-plus"></i>
+          </button>
         </div>
       </div>
     </div>
