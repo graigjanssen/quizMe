@@ -12,7 +12,22 @@ function updateQuestionData(prevState, props){
 };
 // Will be called in form event handlers' setState function.  After questionData object is updated, check if criteria for submit is met
 function canSubmit(questionData){
-  // TODO logic goes here
+  var output = true;
+  for (var prop in questionData){
+    if (typeof questionData[prop] === 'string'){
+      if (questionData[prop] == false) {
+        output = false;
+        break;
+      }
+    }  else if (Array.isArray(questionData[prop]) === true) {
+      // Make sure there are at least two answers with one marked as correct
+      var answers = questionData[prop];
+      var completed = answers.filter(function(answer){ return answer.text.length > 0 });
+      var marked = answers.filter(function(answer){ return answer.correct === true; });
+      if (completed.length < 2 || marked.length === 0) { output = false; }
+    }
+  }
+  return output;
 }
 var AddContainer = React.createClass({
   contextTypes: {
@@ -49,7 +64,9 @@ var AddContainer = React.createClass({
   handleCategoryInput: function(e) {
     var nextProps = {key: 'category', value: e.target.value};
     this.setState(function(pState){
-      updateQuestionData(pState, nextProps)
+      var nextState = updateQuestionData(pState, nextProps);
+      nextState.canSubmit = canSubmit(nextState.questionData);
+      return nextState;
     });
   },
   handleDifficultySelect: function (e) {
@@ -63,13 +80,17 @@ var AddContainer = React.createClass({
       value: e.target.attributes.getNamedItem("data-level").value
     };
     this.setState(function(pState){
-      updateQuestionData(pState, nextProps);
+      var nextState = updateQuestionData(pState, nextProps);
+      nextState.canSubmit = canSubmit(nextState.questionData);
+      return nextState;
     });
   },
   handleQuestionInput: function (e) {
     var nextProps = {key: 'text', value: e.target.value};
     this.setState(function(pState){
-      updateQuestionData(pState, nextProps)
+      var nextState = updateQuestionData(pState, nextProps);
+      nextState.canSubmit = canSubmit(nextState.questionData);
+      return nextState;
     });
   },
   handleAnswerSelect: function (e) {
@@ -97,7 +118,10 @@ var AddContainer = React.createClass({
       });
       // Set selected answer's correct prop to true
       pQuestionData.answers[slot].correct = true;
-      return {questionData: pQuestionData};
+      return {
+        questionData: pQuestionData,
+        canSubmit: canSubmit(pQuestionData)
+      };
     });
   },
   handleAnswerInput: function (e) {
@@ -106,7 +130,11 @@ var AddContainer = React.createClass({
     this.setState(function(pState){
       var pQuestionData = pState.questionData;
       pQuestionData.answers[slot].text = answerText;
-      return {questionData: pQuestionData};
+      var canSubmitResult = canSubmit(pQuestionData);
+      return {
+        questionData: pQuestionData,
+        canSubmit: canSubmitResult
+      };
     })
 
   },
