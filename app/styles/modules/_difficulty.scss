@@ -1,9 +1,15 @@
 .difficulties {
+  margin-bottom: 2em;
+  .difficulty-btns {
+    width: 90%;
+    margin: auto;
+    font-size: 1.1em;
+  }
   .difficulty {
     cursor: pointer;
     background-color: $transparent;
-    border: 1px solid $transparent;
-    border-radius: 4px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
     text-transform: capitalize;
     transition: background-color .25s, border .25s, color .25s;
     &:hover {

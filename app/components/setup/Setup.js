@@ -29,7 +29,7 @@ var Setup = React.createClass({
             difficulties={this.props.difficulties}
             onChange={this.props.onCategoriesChange}/>
           </div>
-          <div className="col-xs-12 col-md-6 fixed-height">
+          <div className="col-xs-12 col-md-6">
             <ConfirmSetup
             selected={this.props.selected}
             onStartQuiz={this.props.onStartQuiz}

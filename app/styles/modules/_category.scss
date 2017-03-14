@@ -1,4 +1,9 @@
 .categories {
+  margin-bottom: 1em;
+  .category-list {
+    width: 90%;
+    margin: auto;
+  }
   .category {
     cursor: pointer;
     background-color: $transparent;
@@ -8,6 +13,11 @@
       background-color: $blue-lighter;
       border: 1px solid $orange-light;
     }
+    @include desktop {
+      &:nth-child(even) {
+        text-align: right;
+      }
+    }  
   }
   .selected {
     background-color: $blue-dark;

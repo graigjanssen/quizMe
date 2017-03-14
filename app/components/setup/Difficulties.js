@@ -10,8 +10,8 @@ function Difficulties(props) {
   });
   return (
     <div className="difficulties">
-      <h2 className="section-subheading text-left">Difficulty</h2>
-      <div className="row">
+      <h2 className="section-subheading green-bg text-left">Difficulty</h2>
+      <div className="row difficulty-btns">
         {difficultyComponents}
       </div>
     </div>

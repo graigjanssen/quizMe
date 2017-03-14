@@ -1,18 +1,31 @@
 .setup {
-  .fixed-height {
-    height: 420px;
-  }
-  .btn-container {
-    position: absolute;
-    bottom: 5%;
+  .section-subheading {
+    width: 85%;
+    margin: .5em auto;
+    border-radius: 10px;
+    color: white;
+    padding: .25em .4em;
+    font-size: 1.3em;
+    font-weight: 100;
+    @include phone {
+      width: 90%;
+    }
   }
   .confirm-setup {
-    height: 75%;
+    .categories-table {
+      width: 85%;
+      margin: auto;
+    }
+    .table-heading {
+      margin-top: .3em;
+    }
     .categories {
-      border-top: 1px solid $blue-darker;
-      border-bottom: 1px solid $blue-darker;
-      height: 70%;
+      height: 250px;
       overflow: scroll;
+    }
+    .start-quiz {
+      margin-bottom: 1em;
+      font-size: 1.2em;
     }
   }
 }

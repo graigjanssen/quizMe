@@ -38,8 +38,10 @@ var Categories = React.createClass({
     })
     return (
       <div className="categories">
-        <h2 className="section-subheading text-left">Categories</h2>
-        {categoryList}
+        <h2 className="section-subheading blue-bg text-left">Categories</h2>
+        <div className="category-list">
+          {categoryList}
+        </div>
       </div>
     )
   }

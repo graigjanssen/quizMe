@@ -16,19 +16,20 @@ function ConfirmSetup(props){
   }
   return (
     <div className="confirm-setup">
-      <div className="row">
-        <h2 className="col-xs-12 section-subheading">My Quiz</h2>
+      <h2 className="section-subheading green-bg text-left">My Quiz</h2>
+      <div className="categories-table">
+        <div className="row">
+          <div className="col-xs-8 text-left"><h3 className="table-heading">Category Name</h3></div>
+          <div className="col-xs-4"><h3 className="table-heading">Questions</h3></div>
+        </div>
+        <div className="row categories">
+          {selectedCategoriesList}
+        </div>
       </div>
-      <div className="row">
-        <div className="col-xs-8 text-left"><h3>Category Name</h3></div>
-        <div className="col-xs-4"><h3>Questions</h3></div>
-      </div>
-      <div className="categories">
-        {selectedCategoriesList}
-      </div>
-      <div className="col-xs-12 btn-container">
+
+      <div className="col-xs-12">
         <button
-          className="btn btn-lg btn-success"
+          className="btn btn-lg btn-primary start-quiz"
           onClick={props.onStartQuiz}
           disabled={props.disableSubmit}>Start Quiz</button>
       </div>

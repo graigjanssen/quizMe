@@ -7,17 +7,28 @@ body {
   height: 480px;
 }
 .global {
-
+  .blue-bg {
+    background-color: $blue;
+  }
+  .green-bg {
+    background-color: darken($green, 5%);
+  }
 }
 .main {
   min-height: 500px;
-  background-color: $orange-lighter;
+  background-color: white;
   color: black;
   position: relative;
   font-size: 1.75em;
   text-align: center;
   @include phone {
     font-size: 1.25em;
+  }
+  .section-heading {
+    margin-bottom: .5em;
+    color: $blue-dark;
+    font-size: 2em;
+    font-weight: 300;
   }
 }
 .home {

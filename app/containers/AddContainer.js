@@ -10,7 +10,10 @@ function updateQuestionData(prevState, props){
   pQuestionData[props.key] = props.value;
   return {questionData: pQuestionData};
 };
-
+// Will be called in form event handlers' setState function.  After questionData object is updated, check if criteria for submit is met
+function canSubmit(questionData){
+  // TODO logic goes here
+}
 var AddContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
