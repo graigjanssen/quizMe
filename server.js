@@ -33,9 +33,7 @@ var questionsRoute = require('./routes/api/questions');
 app.use('/', indexRoute);
 app.use('/api/questions', questionsRoute);
 
-
-var port = process.env.PORT || 3000;
-
-app.listen(port, function(){
+var port = 3000;
+app.listen(process.env.PORT || port, function(){
   console.log('API running on ' + port);
 })
