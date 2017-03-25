@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "s": "nf start -p 3000"
+    "start": "nf start -p 3000",
+    "s": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
