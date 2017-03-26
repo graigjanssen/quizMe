@@ -24,9 +24,7 @@ app.use(function(req, res, next) {
 // DATABASE //
 
 var dbPath = 'mongodb://localhost/quizMe';
-var herokuDB = 'mongodb://heroku_pmjl5579:c28cf07fpf05uus13ipjeur5s7@ds143000.mlab.com:43000/heroku_pmjl5579'
-
-mongoose.connect(herokuDB);
+mongoose.connect(dbPath);
 
 // ROUTING / API //
 
@@ -35,7 +33,6 @@ var questionsRoute = require('./routes/api/questions');
 app.use('/', indexRoute);
 app.use('/api/questions', questionsRoute);
 
-var port = 3000;
-app.listen(process.env.PORT || port, function(){
+app.listen(3000, function(){
   console.log('Express server API running!!');
-})
+});
