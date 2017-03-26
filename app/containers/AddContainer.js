@@ -137,16 +137,12 @@ var AddContainer = React.createClass({
         canSubmit: canSubmitResult
       };
     })
-
   },
   handleSubmit: function () {
     quizHelpers.addQuestion(this.state.questionData)
-    .then(function(response){
-      console.log(response);
-    })
-  },
-  componentDidUpdate: function(){
-    console.log('state: ', this.state);
+    .then(function(){
+      this.context.router.push('/confirm-add');
+    }.bind(this));
   },
   render: function () {
     return (

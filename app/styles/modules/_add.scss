@@ -25,3 +25,13 @@
     }
   }
 }
+.confirm-add {
+  .success-icon {
+    font-size: 5em;
+    color: $green;
+    margin-bottom: .5em;
+  }
+  button {
+    font-size: 1em;
+  }
+}

@@ -14,6 +14,7 @@ var SetupContainer = require('./containers/SetupContainer');
 var QuizContainer = require('./containers/QuizContainer');
 var Results = require('./components/Results');
 var AddContainer = require('./containers/AddContainer');
+var ConfirmAdd = require('./components/ConfirmAdd');
 var ManageContainer = require('./containers/ManageContainer');
 
 var routes = (
@@ -24,6 +25,7 @@ var routes = (
       <Route path="/quiz" component={QuizContainer}/>
       <Route path="/results" component={Results}/>
       <Route path="/add" component={AddContainer}/>
+      <Route path="/confirm-add" component={ConfirmAdd}/>
       <Route path="/manage" component={ManageContainer}/>
     </Route>
   </Router>
