@@ -35,6 +35,7 @@ function getCategoryMap(questions){
 }
 
 router.get('/categories', function(req, res){
+  console.log('GET request to api/questions/categories received...');
   Question.find({}, function(err, dbQuestions){
     res.json({categoryTotals: getCategoryTotals(dbQuestions)});
   });
@@ -49,6 +50,7 @@ router.get('/seed', function(req, res){
 });
 
 router.get('/', function(req, res){
+  console.log('GET request to api/questions received...');
   var selected = JSON.parse(req.query.selected);
   var categories = Object.keys(selected);
   var difficulties = req.query.difficulties;

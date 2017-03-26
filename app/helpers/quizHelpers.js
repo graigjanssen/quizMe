@@ -2,7 +2,7 @@ var axios = require('axios');
 
 var helper = {
   getQuestions: function(params){
-    return axios.get('http://localhost:3000/api/questions', {params: params})
+    return axios.get('/api/questions', {params: params})
     .then(function(response){
       return response.data;
     }).catch(function(error){
