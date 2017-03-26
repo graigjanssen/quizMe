@@ -1,2 +1,1 @@
-web: npm run s
-api: nodemon server.js
+web: npm run start
