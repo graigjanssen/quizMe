@@ -60,8 +60,9 @@ app.use(function(req, res, next) {
 
 // DATABASE
 
-var dbPath = 'mongodb://localhost/quizMe';
-mongoose.connect(process.env.MONGOLAB_URI || dbPath);
+var dbPath = inDev ? 'mongodb://localhost/quizMe' : 'mongodb://heroku_pmjl5579:c28cf07fpf05uus13ipjeur5s7@ds143000.mlab.com:43000/heroku_pmjl5579';
+
+mongoose.connect(dbPath);
 
 // ROUTING / API
 
