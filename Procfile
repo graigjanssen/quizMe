@@ -1,2 +1,2 @@
-web: npm run start
-api: nodemon server.js
+web: npm run s
+api: $PORT node server.js
