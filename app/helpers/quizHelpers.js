@@ -10,7 +10,7 @@ var helper = {
     })
   },
   addQuestion: function(data) {
-    return axios.post('http://localhost:3000/api/questions', data)
+    return axios.post('/api/questions', data)
     .then(function(response){
       return response.data
     }).catch(function(error){
