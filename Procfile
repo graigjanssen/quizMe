@@ -1,2 +1,2 @@
 web: npm run s
-api: node server.js
+api: $PORT node server.js
