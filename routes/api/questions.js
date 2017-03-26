@@ -35,7 +35,12 @@ function getCategoryMap(questions){
 }
 
 router.get('/categories', function(req, res){
-  console.log('GET request to api/questions/categories received...');
+  Question.find({}, function(err, dbQuestions){
+    res.json({categoryTotals: getCategoryTotals(dbQuestions)});
+  });
+});
+
+router.get('/categories#', function(req, res){
   Question.find({}, function(err, dbQuestions){
     res.json({categoryTotals: getCategoryTotals(dbQuestions)});
   });
