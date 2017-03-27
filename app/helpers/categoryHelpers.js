@@ -5,7 +5,7 @@ var helpers = {
     console.log('axios go get categories...');
     return axios.get('/api/questions/categories/')
     .then(function(response){
-      console.log('axios response:', response.data);
+      console.log('axios response:', response);
       return response.data.categoryTotals;
     });
   }
