@@ -40,13 +40,6 @@ router.get('/categories', function(req, res){
   });
 });
 
-router.get('/categories#', function(req, res){
-  Question.find({}, function(err, dbQuestions){
-    res.json({categoryTotals: getCategoryTotals(dbQuestions)});
-  });
-});
-
-
 router.get('/seed', function(req, res){
   seedQuestions.forEach(function(question){
     var newQ = new Question(question);
