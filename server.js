@@ -15,6 +15,7 @@ var app = express();
 
 // MIDDLEWARE
 
+// DEV
 if (inDev){
   var compiler = webpack(config);
   var middleware = webpackMiddleware(compiler, {
@@ -37,9 +38,10 @@ if (inDev){
     res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
     res.end();
   });
+  // PRODUCTION
 } else {
   app.use(express.static(__dirname + '/dist'));
-  app.get('*', function response(req, res) {
+  app.get('/', function response(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
   });
 }
