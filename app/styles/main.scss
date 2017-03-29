@@ -32,17 +32,28 @@ body {
   }
 }
 .home {
-  #title {
-    font-size: 2.75em;
-    margin: .5em 0;
-    color: $blue-dark;
+  #logo {
+    width: 65%;
+    margin: 1em auto;
   }
   #subtitle {
-    font-size: 1.25em;
+    font-size: 1.4em;
     line-height: 1.5em;
     margin-bottom: 1.5em;
+    font-weight: 200;
   }
   .btn {
     font-size: 1.5em;
+  }
+  .note {
+    background-color: lighten($orange-lighter, 3%);
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding: .75em 1.25em;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: .7em;
+    line-height: 1.6em;
+    font-weight: 200;
   }
 }

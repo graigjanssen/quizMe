@@ -1,3 +1,11 @@
+FOR MVP DEPLOYMENT
+- Landing page with two boxes: icon, description, button
+- Footer: super simple for now, just copyright thing
+- Logo
+- Get rid of "Manage" section for now
+- Styling for "Add" page
+- Misc styling
+
 USER STORIES
 - At all times
   X Use top nav to set up quiz, add question, manage questions

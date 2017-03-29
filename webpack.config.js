@@ -38,6 +38,11 @@ module.exports = {
         test: /\.css$/,
         include: path.join(__dirname, '/app'),
         loaders: ["style","css","sass"]
+      },
+      //images
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=25000'
       }
     ]
   },
