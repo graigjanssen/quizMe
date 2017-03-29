@@ -7,8 +7,12 @@ var Header = React.createClass({
     return (
       <div className="header">
         <div className="container-fluid">
-          <span id="header-title">QuizMe</span>
-          <Nav/>
+          <div className="row">
+            <div className="col-xs-4">
+              <img id="header-logo" src={require('../../images/quizMeLogoNav.jpg')} alt="Quiz Me logo"/>
+            </div>
+            <Nav/>
+          </div>
         </div>
       </div>
     )

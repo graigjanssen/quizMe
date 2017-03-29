@@ -4,17 +4,14 @@ var Link = require('react-router').Link;
 
 function Nav(props){
   return (
-    <ul className="nav">
-      <li className="nav-item">
+    <div className="nav">
+      <div className="col-xs-4 nav-item">
         <Link to="/setup"><i className="fa fa-file"></i> New</Link>
-      </li>
-      <li className="nav-item">
+      </div>
+      <div className="col-xs-4 nav-item">
         <Link to="/add"><i className="fa fa-plus"></i> Add</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/manage"><i className="fa fa-folder"></i> Manage</Link>
-      </li>
-    </ul>
+      </div>
+    </div>
   )
 }
 

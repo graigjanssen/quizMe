@@ -1,16 +1,7 @@
 .nav {
-  display: inline-block;
   .nav-item {
-    display: inline-block;
-    margin: 0 .5em;
     font-size: .65em;
     vertical-align: middle;
-    @include tablet {
-      margin: 0;
-    }
-    @include phone {
-      margin: 0;
-    }
     a {
       padding: .05em 1em;
       border-radius: 4px;

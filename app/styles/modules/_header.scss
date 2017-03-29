@@ -10,14 +10,10 @@
     max-height: 48px;
     font-size: 2em;
   }
-  #header-title {
-    vertical-align: middle;
-    margin-right: 2em;
-    @include tablet {
-      margin-right: 1em;
-    }
+  #header-logo {
+    height: 52px;
     @include phone {
-      margin-right: 1em;
+      height: 36px;
     }
   }
 }
