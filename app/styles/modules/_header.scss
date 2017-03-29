@@ -11,6 +11,7 @@
     font-size: 2em;
   }
   #header-logo {
+    padding-left: .4em;
     height: 52px;
     @include phone {
       height: 36px;

@@ -8,8 +8,8 @@ var Header = React.createClass({
       <div className="header">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-xs-4">
-              <img id="header-logo" src={require('../../images/quizMeLogoNav.jpg')} alt="Quiz Me logo"/>
+            <div className="col-xs-4 col-sm-3 col-md-2">
+              <img id="header-logo" src={require('../../images/quizMeLogoNav.png')} alt="Quiz Me logo"/>
             </div>
             <Nav/>
           </div>

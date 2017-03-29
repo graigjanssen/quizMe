@@ -1,22 +1,23 @@
 .nav {
   .nav-item {
-    font-size: .65em;
-    vertical-align: middle;
+    font-size: .7em;
+    padding-top: .4em;
     a {
-      padding: .05em 1em;
-      border-radius: 4px;
+      padding: .25em 1.25em;
+      border-radius: 6px;
       background-color: rgba(0,0,0,0);
       color: white;
       transition: background-color .3s, color .3s;
       &:hover, &:visited {
         background-color: $blue-dark;
         color: $yellow-lighter;
+        text-decoration: none;
       }
       @include tablet {
-        padding: 0 .7em;
+        padding: .2em .8em;
       }
       @include phone {
-        padding: 0 .4em;
+        padding: .2em .6em;
       }
     }
     .fa-file {
