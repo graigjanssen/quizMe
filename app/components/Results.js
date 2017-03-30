@@ -20,9 +20,9 @@ function Results(props){
     <div className="results text-center row">
       <h1 className="heading col-xs-12">Quiz Complete</h1>
       <h2>Your Score</h2>
-      <h1 className={"score col-xs-2 col-xs-offset-5 " + rating}>{score}%</h1>
+      <h1 className={"score col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5 " + rating}>{score}%</h1>
       <h3 className="message col-xs-12">{message}</h3>
-      <div className="col-xs-6 col-xs-offset-3">
+      <div className="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         <Link to="/setup">
           <button className="btn btn-lg btn-primary">Take Another Quiz</button>
         </Link>

@@ -19,8 +19,8 @@ function ConfirmSetup(props){
       <h2 className="section-subheading green-bg text-left">My Quiz</h2>
       <div className="categories-table">
         <div className="row">
-          <div className="col-xs-8 text-left"><h3 className="table-heading">Category Name</h3></div>
-          <div className="col-xs-4"><h3 className="table-heading">Questions</h3></div>
+          <div className="col-xs-7 text-left"><h3 className="table-heading">Category Name</h3></div>
+          <div className="col-xs-5"><h3 className="table-heading">Questions</h3></div>
         </div>
         <div className="row categories">
           {selectedCategoriesList}

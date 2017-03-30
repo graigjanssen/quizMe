@@ -1,6 +1,10 @@
 .footer {
   background-color: $blue-darker;
-  color: white;
-  min-height: 100px;
-  font-size: 2em;;
+  color: #ddd;
+  min-height: 86px;
+  font-size: 1.1em;
+  font-weight: 200;
+  .footer-text {
+    margin-top: 1em;
+  }
 }

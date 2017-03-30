@@ -10,7 +10,7 @@ function DifficultySelect(props){
   });
   return (
     <div className="col-xs-12 col-sm-6 difficulties">
-      <h2 className="subheading">Difficulty</h2>
+      <h2 className="form-label blue-bg">Difficulty</h2>
       {difficultyComponents}
     </div>
   )
@@ -49,7 +49,7 @@ function Add(props){
       <h1 className="section-heading">Add New Question</h1>
       <div className="row">
         <div className="col-xs-12 col-sm-6">
-          <h2 className="subheading">Category</h2>
+          <h2 className="form-label blue-bg">Category</h2>
           <input type="text"
           onChange={props.handleCategoryInput}/>
         </div>
@@ -57,8 +57,8 @@ function Add(props){
         handleDifficultySelect={props.handleDifficultySelect}/>
       </div>
       <div className="row">
-        <div className="col-xs-12">
-          <h2>Question Text</h2>
+        <div className="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <h2 className="form-label blue-bg">Question Text</h2>
         </div>
       </div>
       <div className="row space">
@@ -67,8 +67,8 @@ function Add(props){
         </div>
       </div>
       <div className="row space">
-        <div className="answer-inputs col-xs-12 col-sm-6 col-sm-offset-3">
-          <h2>Answers</h2>
+        <div className="answer-inputs col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <h2 className="form-label blue-bg">Answers</h2>
           <h4><em>Provide at least 2 answers and select the correct one</em></h4>
           {answerInputs}
         </div>

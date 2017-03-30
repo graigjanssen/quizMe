@@ -1,8 +1,8 @@
 FOR MVP DEPLOYMENT
-- Landing page with two boxes: icon, description, button
-- Footer: super simple for now, just copyright thing
-- Logo
-- Get rid of "Manage" section for now
+X Landing page with two boxes: icon, description, button
+X Footer: super simple for now, just copyright thing
+X Logo
+X Get rid of "Manage" section for now
 - Styling for "Add" page
 - Misc styling
 

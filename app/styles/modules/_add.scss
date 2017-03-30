@@ -1,4 +1,16 @@
 .add {
+  .form-label {
+    width: 85%;
+    margin: .5em auto;
+    border-radius: 10px;
+    color: white;
+    padding: .25em .4em;
+    font-size: 1.4em;
+    font-weight: 100;
+    @include phone {
+      width: 90%;
+    }
+  }
   .diff-label {
     margin-right: 1em;
   }
@@ -27,9 +39,8 @@
 }
 .confirm-add {
   .success-icon {
-    font-size: 5em;
+    font-size: 5.5em;
     color: $green;
-    margin-bottom: .5em;
   }
   button {
     font-size: 1em;
