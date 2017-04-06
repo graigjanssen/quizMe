@@ -26,7 +26,7 @@ function QuizBar(props){
 }
 function QuizNavButton(props){
   return (
-    <div className="btn-wrapper text-center">
+    <div className="btn-wrapper text-center space">
       <button className="btn btn-lg btn-primary btn-next"
        disabled={!props.answered}
        onClick={props.handleNextClick}>
