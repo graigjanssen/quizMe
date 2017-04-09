@@ -48,7 +48,6 @@ router.get('/seed', function(req, res){
 });
 
 router.get('/', function(req, res){
-  console.log('GET request to api/questions received...');
   var selected = JSON.parse(req.query.selected);
   var categories = Object.keys(selected);
   var difficulties = req.query.difficulties;

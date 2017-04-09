@@ -30,6 +30,16 @@ function canSubmit(questionData){
   }
   return output;
 }
+
+// Remove empty answers before submitting. Resolves issue where appears to post to db, but actually doesn't
+function removeEmptyAnswers(pState){
+  var pQuestionData = pState.questionData;
+  pQuestionData.answers = pQuestionData.answers.filter(function(answer){
+    return answer.text;
+  })
+  return {questionData: pQuestionData}
+}
+
 var AddContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -139,6 +149,7 @@ var AddContainer = React.createClass({
     })
   },
   handleSubmit: function () {
+    this.setState(removeEmptyAnswers);
     quizHelpers.addQuestion(this.state.questionData)
     .then(function(){
       this.context.router.push('/confirm-add');
