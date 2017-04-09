@@ -20,6 +20,14 @@ var helpers = {
       }
     });
     return selectedCats;
+  },
+  deleteZeroValues: function(obj){
+    for (var prop in obj){
+      if (obj[prop] === 0){
+        delete obj[prop]
+      }
+    }
+    return obj;
   }
 }
 

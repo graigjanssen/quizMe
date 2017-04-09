@@ -42,6 +42,7 @@ var SetupContainer = React.createClass({
       // Update selected state with correct question totals
       var categories = prevState.categories, selectedCats = prevState.selected;
       var nextSelected = setupHelpers.syncQuestionTotals(categories, selectedCats, prevDifficulties);
+      nextSelected = setupHelpers.deleteZeroValues(nextSelected);
       return {difficulties: prevDifficulties, selected: selectedCats};
     });
   },
@@ -58,7 +59,9 @@ var SetupContainer = React.createClass({
         var prevSelected = prevState.selected;
         selected ? prevSelected[name] = questions : delete prevSelected[name]; // Set or remove category from state based on 'selected' state
         var disableSubmit = Object.keys(prevSelected).length === 0 ? true : false;
-        return {selected: prevSelected, disableSubmit: disableSubmit};
+        // Remove zero values from selected
+        var nextSelected = setupHelpers.deleteZeroValues(prevSelected);
+        return {selected: nextSelected, disableSubmit: disableSubmit};
       });
     }
   },

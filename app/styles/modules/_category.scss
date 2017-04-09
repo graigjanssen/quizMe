@@ -9,20 +9,9 @@
     background-color: $transparent;
     border: 1px solid $transparent;
     transition: background-color .25s, border .25s;
-    &:not(.disabled) {
-      &:hover {
-        background-color: $blue-lighter;
-        border: 1px solid $orange-light;
-      }
-      .selected {
-        background-color: $blue-dark;
-        border: 1px solid $orange-lighter;
-        color: white;
-        &:hover {
-          background-color: $blue;
-          color: white;
-        }
-      }
+    &:hover {
+      background-color: $blue-lighter;
+      border: 1px solid $orange-light;
     }
     @include desktop {
       &:nth-child(even) {
@@ -30,8 +19,15 @@
       }
     }
   }
-
-
+  .selected {
+    background-color: $blue-dark;
+    border: 1px solid $orange-lighter;
+    color: white;
+    &:hover {
+      background-color: $blue;
+      color: white;
+    }
+  }
   .disabled {
     cursor: not-allowed;
     color: #888;
