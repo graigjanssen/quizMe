@@ -46,19 +46,21 @@ var SetupContainer = React.createClass({
     });
   },
   handleCategoriesChange: function(e){
-    utils.toggleSelected(e);
     var el = e.target;
-    var selected = el.classList.contains('selected');
-    // data attributes set using props.  getNamedItem method of NamedNodeMap
-    var name = el.attributes.getNamedItem("data-category-name").value;
-    var questions = parseInt(el.attributes.getNamedItem("data-questions").value, 10);
+    if (el.attributes.getNamedItem("data-disabled").value !== "disabled") {
+      utils.toggleSelected(e);
+      var selected = el.classList.contains('selected');
+      // data attributes set using props.  getNamedItem method of NamedNodeMap
+      var name = el.attributes.getNamedItem("data-category-name").value;
+      var questions = parseInt(el.attributes.getNamedItem("data-questions").value, 10);
 
-    this.setState(function(prevState){
-      var prevSelected = prevState.selected;
-      selected ? prevSelected[name] = questions : delete prevSelected[name]; // Set or remove category from state based on 'selected' state
-      var disableSubmit = Object.keys(prevSelected).length === 0 ? true : false;
-      return {selected: prevSelected, disableSubmit: disableSubmit};
-    })
+      this.setState(function(prevState){
+        var prevSelected = prevState.selected;
+        selected ? prevSelected[name] = questions : delete prevSelected[name]; // Set or remove category from state based on 'selected' state
+        var disableSubmit = Object.keys(prevSelected).length === 0 ? true : false;
+        return {selected: prevSelected, disableSubmit: disableSubmit};
+      });
+    }
   },
   handleStartQuiz: function() {
     var selectedDifficulties = [],

@@ -29,11 +29,12 @@ var Categories = React.createClass({
       } else {
         totalQuestions = category.difficulties.easy + category.difficulties.medium + category.difficulties.hard;
       }
-
+      var disabled = totalQuestions === 0 ? "disabled" : "";
       return <Category
       key={index}
       name={category.name}
       totalQuestions={totalQuestions}
+      disableCategory={disabled}
       onClick={onChange}/>
     })
     return (
