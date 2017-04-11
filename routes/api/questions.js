@@ -40,13 +40,6 @@ router.get('/categories', function(req, res){
   });
 });
 
-router.get('/seed', function(req, res){
-  seedQuestions.forEach(function(question){
-    var newQ = new Question(question);
-    newQ.save();
-  });
-});
-
 router.get('/', function(req, res){
   var selected = JSON.parse(req.query.selected);
   var categories = Object.keys(selected);
