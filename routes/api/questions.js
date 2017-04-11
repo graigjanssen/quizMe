@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var Question = require('../../models/question');
-var seedQuestions = require('../../seeds/seedQuestions');
 
 // Transform categoryMap object into array of objects, each with category name and difficulties
 function getCategoryTotals(questions){
