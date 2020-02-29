@@ -4,7 +4,7 @@ Quiz building app built with ReactJS. Add questions to the quizMe database and t
 
 ## Getting Started
 
-Simply download or clone the repository on your local machine to get started.
+Download or clone the repository on your local machine to get started.
 
 ### Prerequisites
 
